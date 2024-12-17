@@ -6,18 +6,21 @@ import Home from "./components/Home";
 import ReusableCard from "./components/ReusableCard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainNavigation from "./components/MainNavigation";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <>
-      <Router>
-        {/* Home is placed outside Routes to render on every page */}
-        <MainNavigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/card" element={<ReusableCard />} />
-        </Routes>
-      </Router>
+      <div>
+        <Router>
+          <MainNavigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/card" element={<ReusableCard />} />
+            <Route path="/counter" element={<Counter />} />
+          </Routes>
+        </Router>
+      </div>
     </>
   );
 }
