@@ -14,14 +14,15 @@ const UseStateHook = () => {
 
     // Check if the color is valid (optional validation)
     setColor(colorInput.trim().toLowerCase());
+    setColorInput("");
   };
 
   return (
-    <div className="text-center w-1/2 mx-auto my-8">
+    <div className="w-1/2 mx-auto my-8 text-center">
       {/* Background Color Box */}
       <div
         className={`rounded-xl shadow-lg p-4 bg-[${color}]`}
-        style={{ backgroundColor: color || "lightpink" }}
+        style={{ backgroundColor: color || "indigo" }}
       >
         <h1 className="text-4xl font-bold text-white">
           useState React Hooks {color ? `- ${color}` : ""}
@@ -29,7 +30,7 @@ const UseStateHook = () => {
       </div>
 
       {/* Input and Button Section */}
-      <div className="my-8 flex place-content-center gap-5">
+      <div className="flex gap-5 my-8 place-content-center">
         <div>
           <input
             type="text"
@@ -39,9 +40,9 @@ const UseStateHook = () => {
             onKeyDown={(e) => e.key === "Enter" && changeUIColor()}
             placeholder="Enter color name"
             aria-label="Enter color name"
-            className="border border-violet-300 rounded-xl outline-none px-4 py-1"
+            className="px-4 py-1 border outline-none border-violet-300 rounded-xl"
           />
-          {error && <p className="text-red-500 italic text-sm mt-2">{error}</p>}
+          {error && <p className="mt-2 text-sm italic text-red-500">{error}</p>}
         </div>
 
         <div>
