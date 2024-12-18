@@ -45,5 +45,9 @@
   "eslint.format.enable": true,
   "terminal.integrated.cursorStyleInactive": "line",
   "terminal.integrated.cursorWidth": 2,
-  "editor.cursorSmoothCaretAnimation": "explicit"
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "terminal.integrated.ignoreBracketedPasteMode": false,
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "Operator Mono",
+  "terminal.integrated.fontLigatures": true
 }
