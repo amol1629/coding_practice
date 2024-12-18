@@ -33,5 +33,14 @@
   "powermode.shake.enabled": false,
   "powermode.shake.intensity": 0,
   "powermode.explosions.enabled": true,
-  "powermode.combo.counterSize": 0
+  "powermode.combo.counterSize": 0,
+  "errorLens.codeLensEnabled": false,
+  "editor.showUnused": false,
+  "intelephense.diagnostics.unusedSymbols": false,
+  "editor.fontFamily": "Operator Mono",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "markdown.validate.unusedLinkDefinitions.enabled": "ignore",
+  "notebook.output.minimalErrorRendering": true,
+  "editor.codeActionWidget.includeNearbyQuickFixes": true,
+  "eslint.format.enable": true
 }

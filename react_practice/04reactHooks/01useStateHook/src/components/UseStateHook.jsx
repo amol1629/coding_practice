@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UseStateHook = () => {
   const [color, setColor] = useState(""); // For dynamic background color
