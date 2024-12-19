@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const UseEffectHook = () => {
   const [count, setCount] = useState(0);
@@ -9,7 +9,8 @@ const UseEffectHook = () => {
       setCount((count) => count + 1);
     }, 2000);
 
-    return () => clearTimeout(timer); // Cleanup the timeout if component unmounts
+    // Cleanup the timeout if component unmounts
+    return () => clearTimeout(timer);
   }, []);
 
   return (

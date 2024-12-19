@@ -7,7 +7,6 @@ const NewCounter = () => {
     setCount((prev) => prev + 1);
   };
 
-  console.log("Count : ", count);
   return (
     <div>
       <div className="w-1/2 p-4 mx-auto my-8 text-center border border-purple-400 rounded-xl bg-purple-50 drop-shadow-2xl">
