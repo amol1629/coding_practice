@@ -1,12 +1,24 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const UseRefHook = () => {
-  const [count, setCount] = useState(0);
   const [value, setValue] = useState(0);
+  const renderedCount = useRef(0);
+
+  // Use of useRef to access the DOM element
+  const inputElem = useRef();
+
+  const changeButtonClicked = () => {
+    // Access and modify the DOM element directly
+    if (inputElem.current) {
+      inputElem.current.value = "Adam";
+      inputElem.current.style.background = "cyan";
+    }
+    console.log("DOM Element : ", inputElem.current);
+  };
 
   useEffect(() => {
-    setCount((prev) => prev + 1);
-  }, [value]);
+    renderedCount.current = renderedCount.current + 1;
+  });
 
   const increaseValue = () => {
     setValue((prev) => prev + 1);
@@ -47,10 +59,28 @@ const UseRefHook = () => {
           <p>
             Counter Component is rendered{" "}
             <span className="px-2 py-1 font-bold text-white bg-pink-600 rounded-lg">
-              {count}
+              {renderedCount.current}
             </span>{" "}
             times.
           </p>
+        </div>
+
+        {/* Use of useRef Hook to modify the DOM element */}
+        <div className="my-7">
+          <input
+            className="px-2 py-1 border border-green-500 rounded-lg me-4"
+            type="text"
+            ref={inputElem}
+            id="name"
+            name="name"
+            placeholder="Please enter your name"
+          />
+          <button
+            className="px-2 py-1 text-blue-700 bg-cyan-100 border border-cyan-700 rounded-lg drop-shadow-lg hover:opacity-80"
+            onClick={changeButtonClicked}
+          >
+            Change DOM
+          </button>
         </div>
       </div>
     </div>
