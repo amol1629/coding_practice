@@ -4,7 +4,7 @@ const UseEffectHook = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Here the count will directly goes from 0 to 2. To avoid this, use cleanup function.
+    // Here the count will directly goes from 0 to 2. To avoid this, use cleanup function or disable React Strick Mode present in "Main.jsx" file.
     const timer = setTimeout(() => {
       setCount((count) => count + 1);
     }, 2000);

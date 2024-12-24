@@ -35,7 +35,7 @@
   "powermode.explosions.enabled": true,
   "powermode.combo.counterSize": 0,
   "errorLens.codeLensEnabled": false,
-  "editor.showUnused": false,
+  "editor.showUnused": true,
   "intelephense.diagnostics.unusedSymbols": false,
   "editor.fontFamily": "Operator Mono",
   "notebook.defaultFormatter": "esbenp.prettier-vscode",

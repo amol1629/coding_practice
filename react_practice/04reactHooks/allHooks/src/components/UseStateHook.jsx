@@ -22,7 +22,7 @@ const UseStateHook = () => {
       {/* Background Color Box */}
       <div
         className={`rounded-xl shadow-lg p-4 bg-[${color}]`}
-        style={{ backgroundColor: color || "indigo" }}
+        style={{ backgroundColor: color || "pink" }}
       >
         <h1 className="text-4xl font-bold text-white">
           useState React Hooks {color ? `- ${color}` : ""}

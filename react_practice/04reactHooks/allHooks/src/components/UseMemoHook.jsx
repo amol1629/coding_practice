@@ -1,8 +1,21 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 const UseMemoHook = () => {
   const [number, setNumber] = useState(0);
   const [show, setShow] = useState(true);
+
+  const [cubeNumber, setCubeNumber] = useState();
+
+  const cubeOfGivenNumber = (num) => {
+    if (isNaN(num) || num === "") return 0;
+    console.log("Cube Function Called.");
+
+    return Math.pow(num, 3);
+  };
+
+  const result = useMemo(() => {
+    return cubeOfGivenNumber(cubeNumber);
+  }, [cubeNumber]);
 
   const updateNumber = () => {
     setNumber((prev) => prev + 1);
@@ -13,20 +26,23 @@ const UseMemoHook = () => {
   };
 
   const getNumber = (num) => {
-    console.log("Computing the number:", num);
     // Simulate an expensive calculation
     let factorial = 1;
     for (let i = 1; i <= num; i++) {
       factorial *= i;
     }
+    // eslint-disable-next-line no-empty
     for (let i = 0; i <= 1000000000; i++) {} // Added delay
     return factorial;
   };
 
-  // Using useMemo ensures that getNumber is only called when number changes, which optimizes performance by preventing unnecessary recalculations. In scenarios where the computation is heavy or the component re-renders frequently, useMemo can significantly improve efficiency and responsiveness.
+  // With useMemo Hook :-> Using useMemo ensures that getNumber is only called when number changes, which optimizes performance by preventing unnecessary recalculations. In scenarios where the computation is heavy or the component re-renders frequently, useMemo can significantly improve efficiency and responsiveness.
   const currentNumber = useMemo(() => {
     return getNumber(number);
   }, [number]);
+
+  // Without useMemo Hook :
+  // const currentNumber = getNumber(number);
 
   return (
     <div>
@@ -35,7 +51,7 @@ const UseMemoHook = () => {
 
         <div className="my-6">
           <button
-            className="px-2 py-1 text-pink-700 bg-pink-100 border border-pink-700 rounded-lg drop-shadow-lg hover:opacity-80"
+            className="px-2 py-1 text-green-700 bg-green-100 border border-green-700 rounded-lg drop-shadow-lg hover:opacity-80"
             onClick={updateNumber}
           >
             Update
@@ -58,6 +74,23 @@ const UseMemoHook = () => {
           >
             {show ? "Please Click Me" : "You have clicked me"}
           </button>
+        </div>
+
+        <div className="my-6">
+          <input
+            type="number"
+            placeholder="Please enter the number.."
+            className="px-2 py-1 mb-2 border border-purple-400 rounded-xl"
+            value={cubeNumber}
+            onChange={(e) => setCubeNumber(e.target.value)}
+          />
+
+          <p>
+            The cube of given Number is{" "}
+            <span className="px-2 mx-2 font-bold bg-purple-100 border border-purple-400 rounded-lg">
+              {!result ? "0" : result}
+            </span>
+          </p>
         </div>
       </div>
     </div>

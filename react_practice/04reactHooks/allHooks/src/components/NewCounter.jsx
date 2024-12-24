@@ -4,6 +4,7 @@ const NewCounter = () => {
   const [count, setCount] = useState(0);
 
   const updateCount = () => {
+    // The first example uses a functional update to set the new state. This ensures that you always get the latest state value, which is particularly important when state updates are asynchronous.
     setCount((prev) => prev + 1);
   };
 
