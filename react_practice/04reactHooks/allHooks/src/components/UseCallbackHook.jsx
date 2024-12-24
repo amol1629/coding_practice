@@ -31,8 +31,8 @@ const UseCallbackHook = () => {
 
           <div className="my-6">
             <p>
-              <span className="font-bold text-xl">Counter : </span>
-              <span className="mx-2 px-2 py-1 font-bold text-white bg-green-600 rounded-lg">
+              <span className="text-xl font-bold">Counter : </span>
+              <span className="px-2 py-1 mx-2 font-bold text-white bg-green-600 rounded-lg">
                 {count}
               </span>{" "}
             </p>
@@ -40,7 +40,7 @@ const UseCallbackHook = () => {
 
           <div>
             <button
-              className="px-2 py-1 text-white font-semibold bg-green-600 border border-green-700 rounded-lg drop-shadow-lg hover:opacity-80"
+              className="px-2 py-1 font-semibold text-white bg-green-600 border border-green-700 rounded-lg drop-shadow-lg hover:opacity-80"
               onClick={updateCount}
             >
               Update
