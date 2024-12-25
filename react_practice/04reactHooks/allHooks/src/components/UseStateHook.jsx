@@ -21,7 +21,7 @@ const UseStateHook = () => {
     <div className="w-3/4 mx-auto my-8 text-center">
       {/* Background Color Box */}
       <div
-        className={`rounded-xl shadow-lg p-4 bg-[${color}]`}
+        className={`border border-pink-700 rounded-xl shadow-lg p-4 bg-[${color}]`}
         style={{ backgroundColor: color || "pink" }}
       >
         <h1 className="text-4xl font-bold text-white">

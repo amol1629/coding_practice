@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-
 const Demo = () => {
   return (
     <div>
-      <div className="text-center bg-indigo-50 border rounded-xl shadow-lg p-4 w-3/4 mx-auto">
+      <div className="w-3/4 p-4 mx-auto text-center border border-indigo-700 shadow-lg bg-indigo-50 rounded-xl">
         <h1>React Demo</h1>
       </div>
     </div>
