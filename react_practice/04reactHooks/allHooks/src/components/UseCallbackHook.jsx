@@ -18,7 +18,7 @@ const UseCallbackHook = () => {
     <div>
       {/* Render UseCallback Header */}
       <div>
-        <div className="w-1/2 p-4 mx-auto my-8 text-center border border-teal-400 rounded-xl bg-teal-50 drop-shadow-2xl">
+        <div className="w-3/4 p-4 mx-auto my-8 text-center border border-teal-400 rounded-xl bg-teal-50 drop-shadow-2xl">
           <div className="text-4xl font-bold text-teal-600">
             useCallback Hook
           </div>

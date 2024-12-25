@@ -15,7 +15,7 @@ const AddTodo = ({ addTodos }) => {
         <form
           action=""
           onSubmit={handleAddTodo}
-          className="flex items-center place-content-center align-middle my-8 gap-4  w-1/2 px-8 py-4 rounded-3xl mx-auto"
+          className="flex items-center place-content-center align-middle my-8 gap-4  w-3/4 px-8 py-4 rounded-3xl mx-auto"
         >
           <input
             type="text"

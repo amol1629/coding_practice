@@ -19,7 +19,7 @@ const IncreDecre = () => {
   };
 
   return (
-    <div className="w-1/2 p-4 mx-auto my-8 border rounded-lg shadow-xl bg-amber-100 border-amber-800">
+    <div className="w-3/4 p-4 mx-auto my-8 border rounded-lg shadow-xl bg-amber-100 border-amber-800">
       <div className="flex justify-center gap-8 align-middle place-content-center">
         <button
           onClick={() => countAction("decr")}

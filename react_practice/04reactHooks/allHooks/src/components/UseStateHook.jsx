@@ -18,7 +18,7 @@ const UseStateHook = () => {
   };
 
   return (
-    <div className="w-1/2 mx-auto my-8 text-center">
+    <div className="w-3/4 mx-auto my-8 text-center">
       {/* Background Color Box */}
       <div
         className={`rounded-xl shadow-lg p-4 bg-[${color}]`}

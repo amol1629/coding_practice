@@ -33,7 +33,7 @@ const TodoItems = () => {
     <>
       <AddTodo addTodos={addTodos} />
 
-      <div className="mb-2 bg-pink-100 p-4 w-1/2 mx-auto rounded-3xl">
+      <div className="mb-2 bg-pink-100 p-4 w-3/4 mx-auto rounded-3xl">
         {todos.length === 0 && (
           <p className="text-slate-600 italic text-center">
             There are no todos to display

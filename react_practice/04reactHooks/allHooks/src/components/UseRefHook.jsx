@@ -32,7 +32,7 @@ const UseRefHook = () => {
   };
   return (
     <div>
-      <div className="w-1/2 p-4 mx-auto my-8 text-center border border-blue-400 rounded-xl bg-blue-50 drop-shadow-2xl">
+      <div className="w-3/4 p-4 mx-auto my-8 text-center border border-blue-400 rounded-xl bg-blue-50 drop-shadow-2xl">
         <div className="text-4xl font-bold text-blue-600">useRef Hook</div>
 
         <div className="my-6">
