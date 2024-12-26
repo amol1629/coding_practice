@@ -2,7 +2,7 @@
 import { useState, useMemo } from "react";
 import { ThemeContext } from "./ThemeContext";
 
-const ThemeContextProvider = (props) => {
+const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   // Memoize the context value
@@ -10,7 +10,7 @@ const ThemeContextProvider = (props) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   );
 };

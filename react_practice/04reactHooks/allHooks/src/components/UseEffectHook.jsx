@@ -5,12 +5,12 @@ const UseEffectHook = () => {
 
   useEffect(() => {
     // Here the count will directly goes from 0 to 2. To avoid this, use cleanup function or disable React Strick Mode present in "Main.jsx" file.
-    const timer = setTimeout(() => {
+    const timer = setInterval(() => {
       setCount((count) => count + 1);
     }, 2000);
 
     // Cleanup the timeout if component unmounts
-    return () => clearTimeout(timer);
+    return () => clearInterval(timer);
   }, []);
 
   return (
