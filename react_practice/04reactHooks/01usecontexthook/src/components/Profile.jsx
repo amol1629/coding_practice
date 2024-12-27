@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import UserDetails from "./UserDetails";
 
@@ -20,4 +20,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default React.memo(Profile);
