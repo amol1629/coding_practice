@@ -1,4 +1,6 @@
 import "./App.css";
+import FormUsingFormData from "./components/FormUsingFormData";
+import FormWithStates from "./components/FormWithStates";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
@@ -11,6 +13,10 @@ function App() {
         <Home />
         <Login />
         <Profile />
+
+        {/* These are the dummy forms for practice */}
+        {/* <FormUsingFormData /> */}
+        {/* <FormWithStates /> */}
       </UserContextProvider>
     </div>
   );

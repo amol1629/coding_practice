@@ -12,8 +12,8 @@ const Profile = () => {
       {user ? (
         <UserDetails user={user} />
       ) : (
-        <p className="text-xl font-medium text-red-500 text-center">
-          No user present.
+        <p className="text-xl font-medium text-center text-red-500">
+          There are no users to display now.
         </p>
       )}
     </div>
