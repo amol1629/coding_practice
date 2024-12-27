@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 const Login = () => {
-  const [credentials, setCredentials] = useState({
-    userName: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCredentials((prev) => ({ ...prev, [name]: value }));
-  };
+  const { setUser } = useContext(UserContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
+
+    // Extract form data directly to avoid unnecessary state
+    const formData = new FormData(e.target);
+    const credentials = {
+      userName: formData.get("userName"),
+      password: formData.get("password"),
+    };
+
     console.log(credentials);
+    setUser(credentials); // Update the context with the user data
+
+    e.target.reset(); // Clear the form fields directly
   };
 
   return (
@@ -29,18 +33,16 @@ const Login = () => {
               className="w-1/2 p-2 my-3 border border-purple-500 rounded-xl"
               placeholder="Enter your name"
               name="userName"
-              value={credentials.userName}
-              onChange={handleChange}
+              required
             />
           </div>
           <div>
             <input
-              type="password" // Changed input type to password for better security
+              type="password"
               className="w-1/2 p-2 my-3 border border-purple-500 rounded-xl"
               placeholder="Enter your password"
               name="password"
-              value={credentials.password}
-              onChange={handleChange}
+              required
             />
           </div>
           <div className="my-4">
