@@ -45,3 +45,16 @@ console.log(
   "Triple Equals To For Number 21 : ",
   variableNumber1 === variableNumber2
 );
+
+const person1 = {
+  name: "Tony",
+  age: 23,
+};
+
+const person2 = {
+  name: "Tony",
+  age: 23,
+};
+
+console.log("Person1 == person2 : ", person1.name == person2.name);
+console.log("Person1 === person2 : ", person1.name === person2.name);
