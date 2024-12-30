@@ -11,3 +11,184 @@ let languages = [
   "Swift",
 ];
 
+/**
+ * Mutator Methods in Array : These method modifies the origin array.
+ *      1) push() ==> Add one or more elements to the end of an array and returns the new length of the array.
+ *
+ *      2) pop() ==> Removes the last element from an array and returns that removed element.
+ *
+ *      3) shift() ==> Removes the first element from an array and returns that removed element.
+ *
+ *      4) unshift() ==> Adds one or more elements to the beginning of an array and returns the new length of the array.
+ *
+ *      5) splice() ==> Adds and/or removes elements from an array.
+ *
+ *      6) sort() ==> Sorts the elements from an array in place and returns the array.
+ *
+ *      7) reverse() ==> Reverse the order of the elements in array in place.
+ *
+ *      8) fill() ==> Fills all the elements of an array from a start index to an end index with a static value.
+ *
+ *      9) copyWithin() ==> Copies a sequence of array element withing the array to the position starting at target.
+ */
+
+/**
+ * Accessor Methods in Array : These method do not modifies the origin array instead return a new value of representation.
+ *      1) concat() ==> merge two or more arrays and returns new array.
+ *
+ *      2) slice() ==> Returns a "shallow copy" of a portion of an array into a new array object.
+ *
+ *      3) join() ==> Joins all elements of an array into a string.
+ *
+ *      4) indexOf() ==> Returns the first index at which a given element can be found in the array.
+ *
+ *      5) lastIndexOf() ==> Returns the last index at which a given element can be found in the array.
+ *
+ *      6) includes() ==> Determines whether an array includes a certain value among its entries.
+ *
+ *      7) toString() => Returns a string representing the array and its elements.
+ *
+ *      8) toLocalString() ==> Returns a localized string representing the array and its elements
+ *
+ *      9) find() ==> Returns the value of the first element in the array that satisfy the provided testing function.
+ *
+ *      10) findIndexOf() ==> Returns the value of the first element in the array that satisfy the provided testing function.
+ *
+ *      11) filter() ==> Creates the new array with all elements that pass the test implemented by the provided function.
+ *
+ *      12) map() ==> Creates a new array with the results of calling a provided function on every element in the calling array.
+ *
+ *      13) reduce() ==> Applies a function against the accumulator and each element in the array to reduce it to a single value.
+ *
+ *      14) reduceRight() ==> Applies a function against the accumulator and each element in the array from right-to-left to reduce it to a single value.
+ *
+ *      15) some() ==> Tests whether at least one element in the array passes the test implemented by the provided function.
+ *
+ *      16) every() ==> Tests whether all the elements in the array pass the test implemented by the provided function.
+ *
+ *      17) flat() ==> Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+ *
+ *      18) flatMap() ==> First map each element using mapping function, then flattens the result into a new array.
+ */
+
+/********************************************************************************
+ *
+ * push() Method :
+ * -  The push() method in JavaScript is used to add one or more elements to the end of an array.
+ * - The push() method modifies the original array (it's a mutator method)
+ * - It returns the new length of the array after the elements are added.
+ *
+ *******************************************************************************/
+
+// const pushArray = [10, 20, 30, 40];
+// const returnValue = pushArray.push(50, 60, 70);
+
+// console.log("Original Array:", pushArray);
+// console.log("Push Method Return : ", returnValue);
+
+/********************************************************************************
+ *
+ * pop() Method :
+ * - The pop() method in JavaScript is used to remove the last element from an array.
+ * - The pop() method modifies the original array (it's a mutator method)
+ * - It returns the removed element. If the array is empty, it returns undefined.
+ *
+ *******************************************************************************/
+
+// const popArray = [10, 20, 30, 40];
+// const returnValue = popArray.pop();
+// console.log("Original Array:", popArray);
+// console.log("Push Method Return : ", returnValue);
+
+/********************************************************************************
+ *
+ * toString() Method :
+ * - The toString() method converts an array into a comma-separated string of its element.
+ * - It always uses comma (,) as a separator.
+ * - It does not allow customization of the operator.
+ * - It is less flexible.
+ * - It is an "accessor method" of array.
+ * - If we use empty array, then it will return an empty string ("")
+ * - Use Case => Quick conversion to comma separated.
+ *
+ *******************************************************************************/
+
+// const toStringArray = [10, 20, true];
+// const returnValue = toStringArray.toString();
+// console.log("Original Array:", toStringArray);
+// console.log("toString() Method Return : ", returnValue);
+
+/********************************************************************************
+ *
+ * join() Method :
+ * - The toString() method also converts an array into a string, but it allows you to specify a "custom separator" between elements.
+ * - If no separator provided, it defaults to a comma (,) -- just like toString().
+ * - It is more flexible that toString() method.
+ * - It is an "accessor method" of array.
+ * - If we use empty array, then it will return an empty string ("")
+ * - Use Case => Fine-grained control over formatting.
+ *
+ *******************************************************************************/
+
+// const joinArray = [10, 20, 30, 40];
+// const defaultJoin = joinArray.join();
+// const joinWithSeparator = joinArray.join(" - ");
+// console.log("Original Array : ", joinArray);
+// console.log("Default Join : ", defaultJoin);
+// console.log("Join With Separator : ", joinWithSeparator);
+
+/********************************************************************************
+ *
+ * shift() Method :
+ * - The shift() method removes the first element from an array and returns that removed element.
+ * - This operation modifies the original array by shifting all subsequent elements one position to the left, thereby decreasing the array's length by one.
+ * - If the array is empty, undefined is returned and the array is not modified.
+ * - It is mutator method.
+ * - Since it involves the re-indexing of the elements, it can be less efficient for large arrays compared to methods that operate on the end of the array, such as push() and pop().
+ *
+ *******************************************************************************/
+
+// const shiftArray = [10, 20, 30, 40];
+// const removedElement = shiftArray.shift();
+// console.log("Original Array : ", shiftArray);
+// console.log("Shift Method Return : ", removedElement);
+
+/********************************************************************************
+ *
+ * unshift() Method :
+ * - The unshift() method adds the element to the beginning of the array and returns the new length of the array.
+ * - This operation modifies the original array by shifting existing element to the right to accommodate the new element at the start.
+ * - It is mutator method.
+ * - Since it involves the reindexing of the elements, it can be less efficient for large arrays compared to methods that operate on the end of the array, such as push() and pop().
+ *
+ *******************************************************************************/
+
+// const unshiftArray = [10, 20, 30, 40];
+// const removedElement = unshiftArray.unshift("tony");
+// console.log("Original Array : ", unshiftArray);
+// console.log("Shift Method Return : ", removedElement);
+
+/********************************************************************************
+ *
+ * concat() Method :
+ * - The concat() method used to merge two or more arrays into a new array.
+ * - It does not modifies the original array but returns the new array containing the combined elements.
+ * - It is accessor method.
+ * - You can pass multiple arrays or values to concat(),and it will merge them in the order they provided.
+ * - The concat() can also merge the individual values along with the arrays.
+ * - If an array to be concatenated contains nested arrays, concat() does not flatten them, the nested array remains as is.
+ * - In JavaScript, the concat() method merges arrays but does not flatten nested arrays. To achieve a flattened array when concatenating nested arrays, you can use the flat() method or the spread operator (...).
+ *
+ *******************************************************************************/
+
+// const array1 = [10, 20, 30];
+// const array2 = [99, 88, 77];
+
+// const concatenatedArray = array1.concat(array2, 44);
+// console.log("Concatenated Array : ", concatenatedArray);
+
+// If an array to be concatenated contains nested arrays, concat() does not flatten them, the nested array remains as is.
+
+// const nestedArray = [["tony", "hulk", "thor"]];
+// const concatenatedNestedArray = array1.concat(nestedArray);
+// console.log("Concatenated Nested Array : ", concatenatedNestedArray);
