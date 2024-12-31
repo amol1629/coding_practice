@@ -178,6 +178,8 @@ let languages = [
  * - The concat() can also merge the individual values along with the arrays.
  * - If an array to be concatenated contains nested arrays, concat() does not flatten them, the nested array remains as is.
  * - In JavaScript, the concat() method merges arrays but does not flatten nested arrays. To achieve a flattened array when concatenating nested arrays, you can use the flat() method or the spread operator (...).
+ * -  The concat() method can also be used to create a shallow copy by concatenating the array with an empty array. 
+
  *
  *******************************************************************************/
 
@@ -192,3 +194,45 @@ let languages = [
 // const nestedArray = [["tony", "hulk", "thor"]];
 // const concatenatedNestedArray = array1.concat(nestedArray);
 // console.log("Concatenated Nested Array : ", concatenatedNestedArray);
+
+/********************************************************************************
+ *
+ * slice() Method :
+ * - The slice() method creates a shallow copy of a portion of an array into a new array object without modifying the original array.
+ * It takes two optional parameters :
+ *      1) the start index ==> The index at which to begin the extraction. If omitted, it defaults to 0 and wil return the exact original array (sometimes used for copying the array).
+ *      2) end index ==> The index at which to end extraction (exclusive). If omitted, it defaults to the array's length.
+ * - It is accessor method.
+ * - It does not modify the original array.
+ * - It returns a new array containing the selected elements.
+ * The negative indices can be used to count from the end of the array.
+ *
+ *******************************************************************************/
+
+const sliceArray = [10, 20, 30, 40, 50, 60];
+const newSlicedArray = sliceArray.slice(1);
+
+console.log("Original Array : ", sliceArray);
+console.log("Sliced Array : ", newSlicedArray);
+
+/********************************************************************************
+ *
+ * splice() Method :
+ * - The splice() method changes the contents of an array by removing, replacing, or adding elements in place.
+ * It modifies the original array and returns an array containing the removed elements.
+ * - It is mutator method.
+ * - Structure ==> array.splice(startIndex, deleteCount, item1, item2, ..., itemN);
+ * - It takes at least two parameters : 1) startIndex 2) deleteCount 3) additional elements can be added after these parameters :
+ *     1) startIndex ==> The start index is the position at which to start changing the array. If it is greater than the length of the array, the method will simply append the new elements to the end of the array.
+ *    2) deleteCount ==> The number of elements to remove. If omitted, all elements from the startIndex to the end of the array are removed.
+ *    3) items to add (optional) ==> The elements to add the array, starting at startIndex.
+ * You can add new elements by specifying them after the deleteCount.
+ *
+ *******************************************************************************/
+
+// const spliceArray = [10, 20, 30, 40, 50, 60];
+
+// const returnSplicedArray = spliceArray.splice(1, 1);
+
+// console.log("Original Array : ", spliceArray);
+// console.log("Spliced Array : ", returnSplicedArray);
