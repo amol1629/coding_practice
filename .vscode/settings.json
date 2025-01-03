@@ -37,7 +37,7 @@
   "errorLens.codeLensEnabled": false,
   "editor.showUnused": true,
   "intelephense.diagnostics.unusedSymbols": false,
-  "editor.fontFamily": "Operator Mono",
+  "editor.fontFamily": "'Lexend Deca Regular'",
   "notebook.defaultFormatter": "esbenp.prettier-vscode",
   "markdown.validate.unusedLinkDefinitions.enabled": "ignore",
   "notebook.output.minimalErrorRendering": true,
@@ -48,6 +48,6 @@
   "editor.cursorSmoothCaretAnimation": "explicit",
   "terminal.integrated.ignoreBracketedPasteMode": false,
   "terminal.integrated.fontSize": 12,
-  "terminal.integrated.fontFamily": "Operator Mono",
+  "terminal.integrated.fontFamily": "'Operator Mono Lig'",
   "terminal.integrated.fontLigatures": true
 }
