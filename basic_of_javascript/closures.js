@@ -10,3 +10,15 @@
  * - Closures are also used in reactive programming, where they are used to create observables and observers.
  * -
  */
+
+function outer() {
+  let name = "closure";
+
+  function inner() {
+    console.log("Inner Function Calling : ", name);
+  }
+  return inner;
+}
+
+outer();
+// result();
