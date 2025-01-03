@@ -199,40 +199,62 @@ let languages = [
  *
  * slice() Method :
  * - The slice() method creates a shallow copy of a portion of an array into a new array object without modifying the original array.
- * It takes two optional parameters :
+ * - It takes two optional parameters :
  *      1) the start index ==> The index at which to begin the extraction. If omitted, it defaults to 0 and wil return the exact original array (sometimes used for copying the array).
  *      2) end index ==> The index at which to end extraction (exclusive). If omitted, it defaults to the array's length.
  * - It is accessor method.
  * - It does not modify the original array.
  * - It returns a new array containing the selected elements.
- * The negative indices can be used to count from the end of the array.
+ * - The negative indices can be used to count from the end of the array.
+ *  - Slice method return an empty array only when :
+ *      1) start index is greater than or equal to end index after normalization or
+ *      2) Both the indices are out of bounds for the array.
  *
  *******************************************************************************/
 
-const sliceArray = [10, 20, 30, 40, 50, 60];
-const newSlicedArray = sliceArray.slice(1);
+// const sliceArray = [10, 20, 30, 40, 50, 60];
+// const newSlicedArray = sliceArray.slice(1, -3);
 
-console.log("Original Array : ", sliceArray);
-console.log("Sliced Array : ", newSlicedArray);
+// console.log("Original Array : ", sliceArray);
+// console.log("Sliced Array : ", newSlicedArray);
 
 /********************************************************************************
  *
  * splice() Method :
  * - The splice() method changes the contents of an array by removing, replacing, or adding elements in place.
- * It modifies the original array and returns an array containing the removed elements.
+ * - It modifies the original array and returns an array containing the removed elements.
  * - It is mutator method.
  * - Structure ==> array.splice(startIndex, deleteCount, item1, item2, ..., itemN);
  * - It takes at least two parameters : 1) startIndex 2) deleteCount 3) additional elements can be added after these parameters :
  *     1) startIndex ==> The start index is the position at which to start changing the array. If it is greater than the length of the array, the method will simply append the new elements to the end of the array.
  *    2) deleteCount ==> The number of elements to remove. If omitted, all elements from the startIndex to the end of the array are removed.
  *    3) items to add (optional) ==> The elements to add the array, starting at startIndex.
- * You can add new elements by specifying them after the deleteCount.
+ * - You can add new elements by specifying them after the deleteCount.
+ * - For splice() :
+ *      1) If start is beyond the array length :
+ *              ==> No elements are removed or added
+ *              ==> The method still work without error.
+ *      2) If deleteCount is 0 :
+ *              ==> No elements are removed, but elements can still be added.
+ *      3) If deleteCount is greater than the number of elements remaining in the array :
+ *              ==> Only available elements from start onward are removed.
+ *  - If deleteCount is negative, it is treated as 0, and no elements are removed. You can still add elements.
  *
  *******************************************************************************/
 
-// const spliceArray = [10, 20, 30, 40, 50, 60];
+//  const spliceArray = [10, 20, 30, 40, 50, 60];
 
-// const returnSplicedArray = spliceArray.splice(1, 1);
+//  const returnSplicedArray = spliceArray.splice(1, 1);
 
 // console.log("Original Array : ", spliceArray);
 // console.log("Spliced Array : ", returnSplicedArray);
+
+/********************************************************************************
+ *
+ * splice() Method :
+ * - The splice() method changes the contents of an array by removing, replacing, or adding elements in place.
+ *
+ *******************************************************************************/
+// const spliceArray = [10, 20, 30, 40, 50];
+
+
