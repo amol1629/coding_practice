@@ -47,7 +47,8 @@
   "terminal.integrated.cursorWidth": 2,
   "editor.cursorSmoothCaretAnimation": "explicit",
   "terminal.integrated.ignoreBracketedPasteMode": false,
-  "terminal.integrated.fontSize": 12,
-  "terminal.integrated.fontFamily": "'Operator Mono Lig'",
-  "terminal.integrated.fontLigatures": true
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "Operator Mono",
+  "terminal.integrated.fontLigatures": true,
+  "editor.codeLensFontFamily": "'Lexend Deca Regular'"
 }
