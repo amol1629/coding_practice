@@ -50,5 +50,6 @@
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontFamily": "Operator Mono",
   "terminal.integrated.fontLigatures": true,
-  "editor.codeLensFontFamily": "'Lexend Deca Regular'"
+  "editor.codeLensFontFamily": "'Lexend Deca Regular'",
+  "workbench.settings.editor": "ui"
 }

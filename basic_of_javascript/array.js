@@ -1,16 +1,3 @@
-let numbers = [10, 20, 30, 40, 50, 60, 70, 80];
-
-let languages = [
-  "JavaScript",
-  "Python",
-  "React",
-  "Angular",
-  "Ruby On Rail",
-  "Dot Net",
-  "Go",
-  "Swift",
-];
-
 /**
  * Mutator Methods in Array : These method modifies the origin array.
  *      1) push() ==> Add one or more elements to the end of an array and returns the new length of the array.
@@ -251,8 +238,22 @@ let languages = [
 
 /********************************************************************************
  *
- * splice() Method :
- * - The splice() method changes the contents of an array by removing, replacing, or adding elements in place.
+ * find() Method :
+ *  - The find() method in JavaScript is a powerful and frequently used method that helps retrieve the first element in an array that satisfies the provided condition (or testing function).
+ *  - It is a accessor method.
+ *  - Syntax : array.find(callback(element, index, array), thisArg)
+ *            ==> callback : A function that is called for each element in the array. It takes three arguments : element, index, and array.
+ *                          i) element : The current element being processed in the array.
+ *                          ii) index (optional) : The index of the current element being processed in the array.
+ *                          iii) array (optional) : the entire array find() was called on.
+ *          ==> thisArg (optional) : A value to use as this when executing callback.
+ *  - The find() method stops iterating once it finds a match, making it more efficient than methods like filter() if only one result is needed.
+ *  - It returns "undefined" if no element satisfies the condition.
  *
  *******************************************************************************/
-// const spliceArray = [10, 20, 30, 40, 50];
+// const findArray = [10, 20, 30, 40, 50];
+// const findResult = findArray.find((num) => num > 40);
+
+// console.log("Original Array : ", findArray);
+// console.log("Find Result : ", findResult);
+

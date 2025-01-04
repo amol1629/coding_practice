@@ -13,12 +13,15 @@
 
 function outer() {
   let name = "closure";
+  console.log("Outer Function STARTS");
 
   function inner() {
     console.log("Inner Function Calling : ", name);
   }
+
+  console.log("Outer Function ENDS");
   return inner;
 }
 
 outer();
-// result();
+// closureResult();
