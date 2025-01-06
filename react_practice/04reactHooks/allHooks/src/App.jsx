@@ -8,6 +8,7 @@ import UseCallbackHook from "./components/UseCallbackHook";
 import UseContextFooter from "./components/UseContextFooter";
 import UseEffectHook from "./components/UseEffectHook";
 import UseMemoHook from "./components/UseMemoHook";
+import UseReducerHook from "./components/UseReducerHook.jsx";
 import UseRefHook from "./components/UseRefHook";
 import UseStateHook from "./components/UseStateHook";
 import ContextProvider from "./context/ContextProvider.jsx";
@@ -25,6 +26,7 @@ function App() {
       <UseRefHook />
       <UseMemoHook />
       <UseCallbackHook />
+      <UseReducerHook />
 
       <ThemeContextProvider>
         <ThemeChange />
