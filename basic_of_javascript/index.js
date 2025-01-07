@@ -82,10 +82,10 @@
 // console.log(b[b]);
 // console.log(b[c]);
 
+// ? DOM Manipulation :
 
+const button = document.querySelector("button");
 
-
-
-console.log('5' ** '3')
-console.log('5' - 3)
-console.log(5 - 3)
+button.addEventListener("click", function () {
+  this.style.backgroundColor = "red";
+});
