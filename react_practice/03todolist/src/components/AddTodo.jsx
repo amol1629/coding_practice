@@ -15,7 +15,7 @@ const AddTodo = ({ addTodos }) => {
         <form
           action=""
           onSubmit={handleAddTodo}
-          className="flex items-center place-content-center align-middle my-8 gap-4  w-3/4 px-8 py-4 rounded-3xl mx-auto"
+          className="flex items-center w-3/4 gap-4 px-8 py-4 mx-auto my-8 align-middle place-content-center rounded-3xl"
         >
           <input
             type="text"
@@ -24,9 +24,9 @@ const AddTodo = ({ addTodos }) => {
             id="todoItem"
             placeholder="Add your todo..."
             onChange={(e) => setNewItem(e.target.value)}
-            className="border border-pink-400 focus:bg-pink-50 outline-pink-400 px-4  py-3 w-full rounded-3xl"
+            className="w-full px-4 py-3 border border-pink-400 focus:bg-pink-50 outline-pink-400 rounded-3xl"
           />
-          <button className="bg-[#f24464] text-green-50 py-2 px-8 rounded-3xl font-semibold hover:bg-[#f76a83] ">
+          <button className="bg-[#f24464] text-green-50 py-2 px-8 rounded-3xl font-semibold hover:bg-[#f76a83]">
             Add
           </button>
         </form>
