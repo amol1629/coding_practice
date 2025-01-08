@@ -107,8 +107,17 @@ const users = [
   { firstName: "Harry", lastName: "Potter", age: 23 },
 ];
 
-const result = users
-  .filter((user) => user.age < 30)
-  .map((userName) => userName.firstName);
+// const result = users
+//   .filter((user) => user.age < 30)
+//   .map((userName) => userName.firstName);
 
-console.log("Users less than age 30 : ", result);
+// console.log("Users less than age 30 : ", result);
+
+// Using Reduce Method
+const resultUsingReduce = users.reduce((acc, curr) => {
+  if (curr.age < 30) {
+    acc.push(curr.firstName);
+  }
+  return acc;
+}, []);
+console.log("Users less than age 30 : ", resultUsingReduce);
