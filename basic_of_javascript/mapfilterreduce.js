@@ -90,4 +90,12 @@
  *  - The reduce()  is "Higher Order Function" in JavaScript.
  */
 
+const numbers = [10, 20, 30, 100, 40, 50, 60];
 
+const reducedResult = numbers.reduce((acc, curr) => {
+  return curr > acc ? curr : acc;
+}, 0);
+
+console.log("Max is:", reducedResult);
+
+const names = ["John", "Mary", "Jane", "Alice", "Bob", "Charlie"];

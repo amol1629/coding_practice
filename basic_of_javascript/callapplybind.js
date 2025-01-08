@@ -56,16 +56,16 @@
  *  - The bind() method creates a function with a fixed "this" context, useful for event handling or partial application.
  */
 
-function describeRoleForBindMethod(role, organization) {
-  console.log(`${this.name} works as a ${role} in ${organization}.`);
-}
+// function describeRoleForBindMethod(role, organization) {
+//   console.log(`${this.name} works as a ${role} in ${organization}.`);
+// }
 
-const employee = { name: "Tony" };
+// const employee = { name: "Tony" };
 
-const boundFunction = describeRoleForBindMethod.bind(
-  employee,
-  "Front End Developer",
-  "Google"
-);
+// const boundFunction = describeRoleForBindMethod.bind(
+//   employee,
+//   "Front End Developer",
+//   "Google"
+// );
 
-boundFunction();
+// boundFunction();
