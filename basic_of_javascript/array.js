@@ -146,7 +146,7 @@
  * - The unshift() method adds the element to the beginning of the array and returns the new length of the array.
  * - This operation modifies the original array by shifting existing element to the right to accommodate the new element at the start.
  * - It is mutator method.
- * - Since it involves the reindexing of the elements, it can be less efficient for large arrays compared to methods that operate on the end of the array, such as push() and pop().
+ * - Since it involves the re-indexing of the elements, it can be less efficient for large arrays compared to methods that operate on the end of the array, such as push() and pop().
  *
  *******************************************************************************/
 

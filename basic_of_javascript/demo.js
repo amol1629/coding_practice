@@ -1,4 +1,5 @@
-var b = 100;
-var a = 1 + b;
+a = 10;
 
 console.log(a);
+
+var a;
