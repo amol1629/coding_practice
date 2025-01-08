@@ -90,12 +90,25 @@
  *  - The reduce()  is "Higher Order Function" in JavaScript.
  */
 
-const numbers = [10, 20, 30, 100, 40, 50, 60];
+// const numbers = [10, 20, 30, 100, 40, 50, 60];
 
-const reducedResult = numbers.reduce((acc, curr) => {
-  return curr > acc ? curr : acc;
-}, 0);
+// const reducedResult = numbers.reduce((acc, curr) => {
+//   return curr > acc ? curr : acc;
+// }, 0);
 
-console.log("Max is:", reducedResult);
+// console.log("Max is:", reducedResult);
 
-const names = ["John", "Mary", "Jane", "Alice", "Bob", "Charlie"];
+// Question : Find the firstName of those people whose age is less than 30
+const users = [
+  { firstName: "John", lastName: "Doe", age: 23 },
+  { firstName: "Agastha", lastName: "Pandey", age: 28 },
+  { firstName: "Elia", lastName: "Watson", age: 40 },
+  { firstName: "Mathew", lastName: "Wade", age: 60 },
+  { firstName: "Harry", lastName: "Potter", age: 23 },
+];
+
+const result = users
+  .filter((user) => user.age < 30)
+  .map((userName) => userName.firstName);
+
+console.log("Users less than age 30 : ", result);
