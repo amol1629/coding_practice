@@ -1,5 +1,15 @@
 /**
  * * Dates in JavaScript :
+ *  - The Date object is used to work with dates and times.
+ *  - It provides  methods to handle date and time operations such as getting the current date, setting a specific date, comparing dates, and formatting them.
+ *  - The Date object is a built-in object in JavaScript, so you don't need to import.
+ *
+ *  - Important Notes :
+ *          1) The Date object is based on the system clock, so it may not be accurate if the system clock is not set correctly.
+ *          2) JavaScript dates are based on "milliseconds since January 1, 1970 (Unix Epoch)".
+ *          3) JavaScript dates are not timezone-aware, so you need to handle timezone conversions manually.
+ *          4) Months in JavaScript dates are zero-based, so January is 0 and December is 11.
+ *          5) Date objects are mutable. Modifying one instance directly changes its value.
  */
 
 // Creating a Date Object

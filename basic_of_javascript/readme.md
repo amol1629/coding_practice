@@ -326,17 +326,13 @@ let john = new ConstructorFunction("john", 12);
 john.greet(); // Outputs: Hello, dear john
 ```
 
-
-
 ---
-
 
 ## Callbacks in JavaScript
 
 ### What are Callbacks?
 
 Callbacks are functions that are passed as arguments to other functions and are executed after the completion of those functions. They are primarily used to handle asynchronous operations, such as reading files, making network requests, or performing database operations. Callbacks enable non-blocking code execution by deferring tasks until a later time.
-
 
 ### Common Uses of Callbacks
 
@@ -365,7 +361,6 @@ setTimeout(() => {
 
 To improve readability and maintainability, **Promises** and **async/await** are recommended as alternatives.
 
-
 ### Drawbacks of Callbacks
 
 1. Callbacks can lead to  **callback hell** .
@@ -389,11 +384,7 @@ const sayGoodBye = () => {
 greetings("John", sayGoodBye);
 ```
 
-
 ---
-
-
-
 
 ## Closures in JavaScript
 
@@ -447,14 +438,9 @@ console.log("Addition: ", 2 + 2 + "3");
 
 > **Note** : In JavaScript, adding a number to a string concatenates the values. Here, `2 + 2` evaluates to `4`, and `4 + "3"` results in the string "43".
 
-
 ---
 
 ---
-
-
-
-
 
 # JavaScript `call()`, `apply()`, and `bind()` Methods
 
@@ -561,13 +547,9 @@ const boundFunction = describeRoleForBindMethod.bind(
 boundFunction();
 ```
 
-
-
 ---
 
 ---
-
-
 
 # Side Effects and Pure vs Impure Functions in JavaScript
 
@@ -635,6 +617,165 @@ console.log(arr); // Output: [1, 2, 3, 4]
 ---
 
 ---
+
+
+# Date in JavaScript
+
+The `Date` object in JavaScript is used to work with dates and times. It provides a rich set of methods for creating, manipulating, and formatting dates.
+
+## Creating a Date Object
+
+### 1. Without Arguments (Current Date and Time)
+
+```javascript
+let currentDate = new Date();
+console.log(currentDate); // Outputs the current date and time
+```
+
+### 2. Using a Date String
+
+```javascript
+let specificDate = new Date("2025-01-01T12:00:00");
+console.log(specificDate); // Outputs Wed Jan 01 2025 12:00:00 GMT+0000
+```
+
+### 3. Using Year, Month, Day, etc.
+
+```javascript
+let anotherDate = new Date(2025, 0, 1, 12, 30, 45); // Month is 0-indexed (0 = January)
+console.log(anotherDate); // Outputs the specified date
+```
+
+### 4. Using Milliseconds Since Unix Epoch (January 1, 1970)
+
+```javascript
+let epochDate = new Date(0); // Jan 1, 1970
+console.log(epochDate);
+```
+
+### Other Examples 
+
+```javascript
+// Creating a Date Object
+const today = new Date(); // Current date and time
+
+// Get Methods
+console.log("Today's Date:", today);
+console.log("Year:", today.getFullYear()); // Get the full year (e.g., 2024)
+console.log("Month (0-indexed):", today.getMonth()); // 0 (January) to 11 (December)
+console.log(
+  "Month (Human-readable):",
+  today.toLocaleString("en-US", { month: "long" })
+);
+console.log("Day of the Month:", today.getDate());
+console.log("Day of the Week (0-Sunday):", today.getDay());
+console.log("Hours (24-hour clock):", today.getHours());
+console.log("Minutes:", today.getMinutes());
+console.log("Seconds:", today.getSeconds());
+console.log("Milliseconds:", today.getMilliseconds());
+console.log("Time Zone Offset:", today.getTimezoneOffset());
+
+// Set Methods
+today.setFullYear(2025); // Set the year
+today.setMonth(6); // Set the month (July)
+today.setDate(15); // Set the day of the month
+today.setHours(10); // Set the hours
+today.setMinutes(30); // Set the minutes
+today.setSeconds(0); // Set the seconds
+console.log("Updated Date:", today);
+
+// Other Useful Methods
+console.log("Time in milliseconds since 1970-01-01:", today.getTime()); // Milliseconds since the Unix epoch
+console.log("Date in ISO 8601 format:", today.toISOString());
+console.log("Date as a string:", today.toString());
+console.log("Formatted date:", today.toLocaleDateString());
+console.log("Formatted date and time:", today.toLocaleString());
+```
+
+## Common Methods
+
+### 1. Get Date and Time Information
+
+* `getFullYear()`: Returns the year
+* `getMonth()`: Returns the month (0-11, where 0 is January)
+* `getDate()`: Returns the day of the month (1-31)
+* `getDay()`: Returns the day of the week (0-6, where 0 is Sunday)
+* `getHours()`, `getMinutes()`, `getSeconds()`, `getMilliseconds()`: Returns corresponding time components
+
+Example:
+
+```javascript
+let now = new Date();
+console.log(now.getFullYear()); // 2025
+console.log(now.getMonth());    // 0 (January)
+console.log(now.getDate());     // Day of the month
+```
+
+### 2. Set Date and Time
+
+* `setFullYear(year)`, `setMonth(month)`, `setDate(day)`, etc.
+
+Example:
+
+```javascript
+let date = new Date();
+date.setFullYear(2030);
+console.log(date);
+```
+
+### 3. Formatting a Date
+
+* `toDateString()`: Returns a human-readable date string.
+* `toISOString()`: Returns the date in ISO 8601 format.
+
+Example:
+
+```javascript
+let date = new Date();
+console.log(date.toDateString());  // Example: "Thu Jan 09 2025"
+console.log(date.toISOString());   // Example: "2025-01-09T12:00:00.000Z"
+```
+
+### 4. Comparing Dates
+
+```javascript
+let date1 = new Date("2025-01-01");
+let date2 = new Date("2025-02-01");
+
+console.log(date1 > date2);  // false
+console.log(date1.getTime() === date2.getTime());  // false
+```
+
+## Example: Formatting with `Intl.DateTimeFormat`
+
+```javascript
+let date = new Date();
+let formattedDate = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}).format(date);
+console.log(formattedDate);  // Example: "January 9, 2025"
+```
+
+## Notes
+
+* JavaScript dates are based on **milliseconds since January 1, 1970** (Unix Epoch).
+* Months are  **0-indexed** , so January is `0` and December is `11`.
+* The `Date` object is  **mutable** , meaning modifying one instance directly changes its value.
+
+## Summary
+
+The `Date` object is powerful for date and time handling, but it can be complex due to timezone and indexing issues. For advanced date operations, consider libraries like **date-fns** or  **luxon** .
+
+
+---
+
+---
+
+
+
+
 
 ---
 
