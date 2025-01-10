@@ -63,21 +63,25 @@
 //     console.error("Error while fetching user: ", error);
 //   });
 
-// const FAKE_API = "https://jsonplaceholder.typicode.com/posts";
+const FAKE_API = "https://jsonplaceholder.typicode.com/posts";
 
-// const fetchPost = fetch(FAKE_API);
+const fetchPost = fetch(FAKE_API);
 
-// fetchPost
-//   .then((response) => {
-//     if (!response.ok) {
-//       throw new Error(`HTTP status error: ${response.status}`);
-//     }
+fetchPost
+	.then((response) => {
+		if (!response.ok) {
+			throw new Error(`HTTP status error: ${response.status}`);
+		}
+		return response.json();
+	})
+	.then((data) => {
+		console.log("Post Details : ", data);
+	})
+	.catch((error) => {
+		console.log("Error while fetching post details : ", error);
+	});
 
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log("Post Details : ", data);
-//   })
-//   .catch((error) => {
-//     console.log("Error while fetching post details : ", error);
-//   });
+const functionA = () => {
+	console.log("Hello");
+	console.log("H");
+};
