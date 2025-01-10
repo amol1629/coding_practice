@@ -618,7 +618,6 @@ console.log(arr); // Output: [1, 2, 3, 4]
 
 ---
 
-
 # Date in JavaScript
 
 The `Date` object in JavaScript is used to work with dates and times. It provides a rich set of methods for creating, manipulating, and formatting dates.
@@ -653,7 +652,7 @@ let epochDate = new Date(0); // Jan 1, 1970
 console.log(epochDate);
 ```
 
-### Other Examples 
+### Other Examples
 
 ```javascript
 // Creating a Date Object
@@ -768,14 +767,9 @@ console.log(formattedDate);  // Example: "January 9, 2025"
 
 The `Date` object is powerful for date and time handling, but it can be complex due to timezone and indexing issues. For advanced date operations, consider libraries like **date-fns** or  **luxon** .
 
-
 ---
 
 ---
-
-
-
-
 
 ---
 
