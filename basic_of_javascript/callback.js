@@ -44,3 +44,16 @@
 //     }, 1000);
 //   }, 1000);
 // }, 1000);
+
+setTimeout(() => {
+	console.log("0s 1st Task");
+	setTimeout(() => {
+		console.log("7s 2nd Task");
+		setTimeout(() => {
+			console.log("5s 3rd Task");
+			setTimeout(() => {
+				console.log("1s 4th Task");
+			}, 1000);
+		}, 5000);
+	}, 7000);
+}, 0);
