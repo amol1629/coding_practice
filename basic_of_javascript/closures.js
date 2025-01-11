@@ -12,18 +12,18 @@
  ******************************************************************************************************************************************/
 
 function outer() {
-  let name = "closure";
-  console.log("Outer Function STARTS");
+	let name = "closure";
+	console.log("Outer Function STARTS");
 
-  function inner() {
-    console.log("Inner Function Calling : ", name);
-  }
+	function inner() {
+		console.log("Inner Function Calling : ", name);
+	}
 
-  console.log("Outer Function ENDS");
-  return inner;
+	console.log("Outer Function ENDS");
+	return inner;
 }
 
 outer();
 
-console.log("addition ; ", 2+2 + "3" );
+console.log("addition ; ", 2 + 2 + "3");
 // closureResult();
