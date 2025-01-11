@@ -84,8 +84,28 @@
 
 // ? DOM Manipulation :
 
-const button = document.querySelector("button");
+const clickMeButton = document.querySelector("#click-me-button");
+const resetButton = document.querySelector("#reset-button");
 
-button.addEventListener("click", function () {
-  this.style.backgroundColor = "red";
+const updateTextSize = (selector, sizeIncrement = 0, reset = false) => {
+	const elements = document.querySelectorAll(selector);
+	elements.forEach((element) => {
+		if (reset) {
+			element.style.fontSize = ""; // Reset to default font size
+		} else {
+			const currentSize = parseFloat(
+				window.getComputedStyle(element).fontSize
+			);
+			element.style.fontSize = `${currentSize + sizeIncrement}px`;
+		}
+	});
+};
+
+resetButton.addEventListener("click", function () {
+	updateTextSize("h1, h2, p, button", 0, true); // Adjust selector to match all elements
+});
+
+clickMeButton.addEventListener("click", function () {
+	this.style.backgroundColor = "red";
+	updateTextSize("h1, h2, p, button", 5); // Adjust selector and sizeIncrement as needed
 });
