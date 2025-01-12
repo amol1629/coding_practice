@@ -3,6 +3,9 @@
  *
  *  - Callbacks are the functions that are passed as arguments to other functions and are executed after the completion of those functions.
  *  - Callbacks are used to handle asynchronous operations , such as reading files, making network requests, or performing database operations and they enable non-blocking code execution by deferring tasks until a later time.
+ *  - There are two ways in which the callback may be called: 
+ * 				1) Synchronous callbacks  : They are called immediately after the invocation of the outer function, with no intervening asynchronous tasks, 
+ * 				2) Asynchronous callbacks : They  are called at some point later, after an asynchronous operation has completed.
  *
  *  - Common Uses of Callback :
  *          1) Callbacks are also used to handle errors that occur during the execution of a function.
