@@ -20,6 +20,12 @@
  *              2) Abstraction
  *              3) Readability
  *              4) Composability
+ *
+ *  - Drawbacks of Higher-Order Functions :
+ *           1) Can be difficult to understand for beginners.
+ *           2) Can be difficult to debug, maintain, test and optimize.
+ *
+ *
  */
 
 const numbers = [2, 5, 9, 11];
