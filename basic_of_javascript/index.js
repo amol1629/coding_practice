@@ -84,8 +84,8 @@
 
 // ? DOM Manipulation :
 
-const clickMeButton = document.querySelector("#click-me-button");
-const resetButton = document.querySelector("#reset-button");
+// const clickMeButton = document.querySelector("#click-me-button");
+// const resetButton = document.querySelector("#reset-button");
 
 // const updateTextSize = (selector, sizeIncrement = 0, reset = false) => {
 // 	const elements = document.querySelectorAll(selector);
@@ -110,19 +110,15 @@ const resetButton = document.querySelector("#reset-button");
 // 	updateTextSize("h1, h2, p, button", 5); // Adjust selector and sizeIncrement as needed
 // });
 
-const countButtonClicked = () => {
-	let count = 0;
+console.log("START");
 
-	clickMeButton.addEventListener(
-		"click",
-		() => {
-			count++;
-			clickMeButton.textContent = `Button clicked ${count} times.`;
-			clickMeButton.useCapture = true;
-			console.log("Button Clicked : ", count);
-		},
-		{ once: true }
-	);
-};
+setTimeout(() => {
+	console.log("Set Timeout Callback");
+}, 3000);
 
-countButtonClicked();
+fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) => {
+	console.log("Fetch Callback");
+	return response.json();
+});
+
+console.log("END");
