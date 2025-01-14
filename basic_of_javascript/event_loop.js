@@ -47,9 +47,6 @@
  *          1) Non-blocking Asynchronous Behavior : JavaScript is a single-threaded language, meaning it can execute only one task at a time. The event loop allows JavaScript to handle multiple tasks asynchronously.
  *          2) Concurrency Management
  *          3) Avoids Blocking code.
- *
- *
- *
  */
 
 /**

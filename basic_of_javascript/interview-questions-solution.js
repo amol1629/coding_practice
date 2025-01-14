@@ -48,7 +48,7 @@
 // const result = reverseString(stringToBeReversed);
 // console.log(`Reversed String: ${result}`);
 
-// Solution 1 : Reversing each word of the string
+// Solution 2 : Reversing each word of the string
 // const reverseWordsOptimized = (str) => {
 // 	const wordArray = str.split(" ");
 
