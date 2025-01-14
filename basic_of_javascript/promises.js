@@ -1,10 +1,49 @@
 /**
  * * Promises in JavaScript :
  *  - A promise is an object representing the eventual completion or failure of an asynchronous operation.
- *
  *  - Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.
+ *  - Promise objects are immutable, meaning that once a promise is resolved or rejected, it cannot be resolved or rejected again.
  *
- *  -
+ *  - Promises have three states:
+ *  	  	1) Pending : Initial state, neither fulfilled nor rejected.
+ *  	 	2) Fulfilled : Meaning that the operation completed successfully and result is available.
+ *  	  	3) Rejected : Meaning that the operation failed.
+ *
+ *  - A promise can be created in three ways:
+ *  	  	1) Using the Promise constructor.
+ *  	  	2) Using the async/await syntax.
+ *  	  	3) Using the fetch API.
+ *
+ * - Using a Promise :
+ *  - You interact with promises using the .then(), .catch(), and .finally() methods.
+ * 			1) then() :
+ * 					- The .then() method is used to define what happens when the promise is fulfilled. It takes two arguments :
+ * 							a) A callback function that runs when the promise is fulfilled.
+ * 							b) An optional callback function that runs when the promise is rejected.
+ *
+ * 			2) catch() : The .catch() method is used to define what happens when the promise is rejected.
+ *
+ * 			3) finally() : The .finally() method is called after the promise is settled, regardless of whether it was fulfilled or rejected. It is often used for cleanup tasks.
+ *
+ * - Promise Methods :
+ *  	  	1) Promise.all() : Takes an array of promises and resolves when all the promises in the array have resolved.
+ *  	  	2) Promise.allSettled() : Takes an array of promises and resolves after all the promises have either resolved or rejected.
+ * 	  		3) Promise.any() : Takes an array of promises and resolves when any of the promises in the array have resolved.
+ * 	  		4) Promise.race() : Takes an array of promises and resolves or rejects as soon as one of the promises in the array resolves or rejects.
+ *
+ *  ? Promise Chaining :
+ *  	  	- Promises can be chained using the then() method.
+ *  	  	- The then() method returns a new promise, which resolves to the value returned by the callback function.
+ *  	  	- The then() method can be chained multiple times.
+ *  	  	- The catch() method is used to handle errors in the promise chain.
+ *  	  	- The finally() method is used to execute code after the promise is settled.
+ *
+ * - Advantages of Promises :
+ * 			1) Better readability : Promises reduce callback nesting, making code easier to read.
+ * 			2) Error handling : Errors can be handled in on place with .catch().
+ * 			3) Chaining : Promises enables chaining for sequential asynchronous operations.
+ *
+ *
  */
 
 // Basic Promise Example
