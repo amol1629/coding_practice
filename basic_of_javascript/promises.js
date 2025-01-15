@@ -26,10 +26,25 @@
  * 			3) finally() : The .finally() method is called after the promise is settled, regardless of whether it was fulfilled or rejected. It is often used for cleanup tasks.
  *
  * - Promise Methods :
- *  	  	1) Promise.all() : Takes an array of promises and resolves when all the promises in the array have resolved.
- *  	  	2) Promise.allSettled() : Takes an array of promises and resolves after all the promises have either resolved or rejected.
- * 	  		3) Promise.any() : Takes an array of promises and resolves when any of the promises in the array have resolved.
- * 	  		4) Promise.race() : Takes an array of promises and resolves or rejects as soon as one of the promises in the array resolves or rejects.
+ *  	  	1) Promise.all() : 
+ * 						- Takes an array of promises and resolves when all the promises in the array have resolved. 
+ * 						- Success : Returns an array of the resolved values.
+ * 						- Failure : Returns the error of the first rejected promise.
+ * 
+ *  	  	2) Promise.allSettled() : 
+ * 						- Takes an array of promises and resolves after all the promises have either resolved or rejected. 
+ * 						- Success : Returns an array of objects representing the status of each promise.
+ * 						- Failure : Returns an array with all rejection reasons, marked with status: 'rejected'.
+ * 
+ * 	  		3) Promise.any() : 
+ * 						- Takes an array of promises and resolves when any of the promises in the array have resolved. 
+ * 						- Success : Returns the value of the first resolved promise.
+ * 						- Failure : Returns an AggregateError object containing an array of errors.
+ * 
+ * 	  		4) Promise.race() : 
+ * 						- Takes an array of promises and resolves or rejects as soon as one of the promises in the array resolves or rejects. 
+ * 						- Success : Returns the value of the first resolved or rejected promise.
+ * 						- Failure : Returns the error of the first rejected promise.
  *
  *  ? Promise Chaining :
  *  	  	- Promises can be chained using the then() method.
@@ -46,11 +61,11 @@
  *
  */
 
-// Basic Promise Example
-// const promiseFunction = new Promise((resolve, reject) => {
-//   let randomNumber = Math.floor(Math.random() * 10);
+// 	Basic Promise Example
+// 	const promiseFunction = new Promise((resolve, reject) => {
+//	 let randomNumber = Math.floor(Math.random() * 10);
 
-//   console.log("Random Number is : ", randomNumber);
+// console.log("Random Number is : ", randomNumber);
 
 //   if (randomNumber < 5) {
 //     resolve();
@@ -102,25 +117,45 @@
 //     console.error("Error while fetching user: ", error);
 //   });
 
-const FAKE_API = "https://jsonplaceholder.typicode.com/posts";
+// const FAKE_API = "https://jsonplaceholder.typicode.com/posts";
 
-const fetchPost = fetch(FAKE_API);
+// const fetchPost = fetch(FAKE_API);
 
-fetchPost
-	.then((response) => {
-		if (!response.ok) {
-			throw new Error(`HTTP status error: ${response.status}`);
-		}
-		return response.json();
-	})
+// fetchPost
+// 	.then((response) => {
+// 		if (!response.ok) {
+// 			throw new Error(`HTTP status error: ${response.status}`);
+// 		}
+// 		return response.json();
+// 	})
+// 	.then((data) => {
+// 		console.log("Post Details : ", data);
+// 	})
+// 	.catch((error) => {
+// 		console.log("Error while fetching post details : ", error);
+// 	});
+
+// const functionA = () => {
+// 	console.log("Hello");
+// 	console.log("H");
+// };
+
+
+const myPromise = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve("Promise is resolved");
+	}, 3000);
+
+
+});
+
+myPromise
 	.then((data) => {
-		console.log("Post Details : ", data);
+		console.log(data);
 	})
 	.catch((error) => {
-		console.log("Error while fetching post details : ", error);
+		console.log(error);
+	})
+	.finally(() => {
+		console.log("Promise is settled");
 	});
-
-const functionA = () => {
-	console.log("Hello");
-	console.log("H");
-};
