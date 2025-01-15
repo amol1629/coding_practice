@@ -26,23 +26,23 @@
  * 			3) finally() : The .finally() method is called after the promise is settled, regardless of whether it was fulfilled or rejected. It is often used for cleanup tasks.
  *
  * - Promise Methods :
- *  	  	1) Promise.all() : 
- * 						- Takes an array of promises and resolves when all the promises in the array have resolved. 
+ *  	  	1) Promise.all() :
+ * 						- Takes an array of promises and resolves when all the promises in the array have resolved.
  * 						- Success : Returns an array of the resolved values.
  * 						- Failure : Returns the error of the first rejected promise.
- * 
- *  	  	2) Promise.allSettled() : 
- * 						- Takes an array of promises and resolves after all the promises have either resolved or rejected. 
- * 						- Success : Returns an array of objects representing the status of each promise.
+ *
+ *  	  	2) Promise.allSettled() :
+ * 						- Takes an array of promises and resolves after all the promises have either resolved or rejected.
+ * 						- Success : Returns an array of objects representing the status (status: 'fulfilled') of each promise along with the value of the promise.
  * 						- Failure : Returns an array with all rejection reasons, marked with status: 'rejected'.
- * 
- * 	  		3) Promise.any() : 
- * 						- Takes an array of promises and resolves when any of the promises in the array have resolved. 
+ *
+ * 	  		3) Promise.any() :
+ * 						- Takes an array of promises and resolves when any of the promises in the array have resolved.
  * 						- Success : Returns the value of the first resolved promise.
  * 						- Failure : Returns an AggregateError object containing an array of errors.
- * 
- * 	  		4) Promise.race() : 
- * 						- Takes an array of promises and resolves or rejects as soon as one of the promises in the array resolves or rejects. 
+ *
+ * 	  		4) Promise.race() :
+ * 						- Takes an array of promises and resolves or rejects as soon as one of the promises in the array resolves or rejects.
  * 						- Success : Returns the value of the first resolved or rejected promise.
  * 						- Failure : Returns the error of the first rejected promise.
  *
@@ -140,22 +140,48 @@
 // 	console.log("H");
 // };
 
+// const myPromise = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve("Promise is resolved");
+// 	}, 3000);
+// });
 
-const myPromise = new Promise((resolve, reject) => {
+// myPromise
+// 	.then((data) => {
+// 		console.log(data);
+// 	})
+// 	.catch((error) => {
+// 		console.log(error);
+// 	})
+// 	.finally(() => {
+// 		console.log("Promise is settled");
+// 	});
+
+// 1) Promise.all();
+
+const promise1 = new Promise((resolve, reject) => {
 	setTimeout(() => {
-		resolve("Promise is resolved");
+		resolve("Promise 1 is resolved");
 	}, 3000);
-
-
 });
 
-myPromise
-	.then((data) => {
-		console.log(data);
+const promise2 = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve("Promise 2 is resolve");
+		// reject("Promise 2 is rejected");
+	}, 1000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve("Promise 3 is resolved");
+	}, 2000);
+});
+
+Promise.allSettled([promise1, promise2, promise3])
+	.then((result) => {
+		console.log("Promise.all() Result : ", result);
 	})
 	.catch((error) => {
-		console.log(error);
-	})
-	.finally(() => {
-		console.log("Promise is settled");
+		console.error("Promise.all() Error : ", error);
 	});

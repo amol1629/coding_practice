@@ -110,15 +110,17 @@
 // 	updateTextSize("h1, h2, p, button", 5); // Adjust selector and sizeIncrement as needed
 // });
 
-console.log("START");
+// console.log("START");
 
-setTimeout(() => {
-	console.log("Set Timeout Callback");
-}, 3000);
+// setTimeout(() => {
+// 	console.log("Set Timeout Callback");
+// }, 3000);
 
-fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) => {
-	console.log("Fetch Callback");
-	return response.json();
-});
+// fetch("https://jsonplaceholder.typicode.com/todos/1").then((response) => {
+// 	console.log("Fetch Callback");
+// 	return response.json();
+// });
 
-console.log("END");
+// console.log("END");
+
+
