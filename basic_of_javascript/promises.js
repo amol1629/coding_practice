@@ -159,32 +159,32 @@
 
 // 1) Promise.all();
 
-const promise1 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve("Promise 1 with 3000ms is resolved");
-		// reject("Promise 1 with 3000ms is rejected");
-	}, 3000);
-});
+// const promise1 = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve("Promise 1 with 3000ms is resolved");
+// 		// reject("Promise 1 with 3000ms is rejected");
+// 	}, 3000);
+// });
 
-const promise2 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve("Promise 2 with 1000ms is resolve");
-		// reject("Promise 2 with 1000ms is rejected");
-	}, 1000);
-});
+// const promise2 = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve("Promise 2 with 1000ms is resolve");
+// 		// reject("Promise 2 with 1000ms is rejected");
+// 	}, 1000);
+// });
 
-const promise3 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve("Promise 3 with 2000ms is resolved");
-		// reject("Promise 3 with 2000ms is rejected");
-	}, 2000);
-});
+// const promise3 = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve("Promise 3 with 2000ms is resolved");
+// 		// reject("Promise 3 with 2000ms is rejected");
+// 	}, 2000);
+// });
 
-Promise.any([promise1, promise2, promise3])
-	.then((result) => {
-		console.log("Promise.all() Result : ", result);
-	})
-	.catch((error) => {
-		console.error("Promise.all() Error : ", error);
-		console.log(error.errors);
-	});
+// Promise.any([promise1, promise2, promise3])
+// 	.then((result) => {
+// 		console.log("Promise.all() Result : ", result);
+// 	})
+// 	.catch((error) => {
+// 		console.error("Promise.all() Error : ", error);
+// 		console.log(error.errors);
+// 	});
