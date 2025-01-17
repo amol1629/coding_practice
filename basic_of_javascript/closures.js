@@ -25,5 +25,5 @@ function outer() {
 
 outer();
 
-console.log("addition ; ", 2 + 2 + "3");
+
 // closureResult();
