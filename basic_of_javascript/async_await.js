@@ -21,7 +21,7 @@
  *  - The "await" will throw an error if the promise is rejected. You can use try-catch block to handle the error.
  *  - The await can be used multiple times, but it may cause "sequential blocking" of the code. To avoid this, you can use Promise.all() to run multiple promises concurrently.
  *  - Using "await" in loops can cause the promises to run sequentially. To run them concurrently, you can use Promise.all() with the map() method.
- * 
+ *
  *  - The "await" keyword only "pauses the async function execution" but it does not block the timer or other events in the browser from running in parallel. It only blocks the code execution within the async function.
  *
  *  - Key Benefits of Async-Await :
@@ -99,27 +99,31 @@
 // }
 // getDataWithThenMethod();
 
-const myPromiseForAwaitMethod1 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve("Promise 1 for await method is resolved");
-	}, 3000);
-});
+// const myPromiseForAwaitMethod1 = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve("Promise 1 for await method is resolved");
+// 	}, 3000);
+// });
 
-const myPromiseForAwaitMethod2 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		resolve("Promise 2 for await method is resolved");
-	}, 10000);
-});
-const getDataWithAwaitMethod = async () => {
-	console.time("Time Started");
-	console.log("Operation STARTED...");
-	const data1 = await myPromiseForAwaitMethod1;
-	console.log(data1);
-	console.log("Inside getData 1 with await method");
+// const myPromiseForAwaitMethod2 = new Promise((resolve, reject) => {
+// 	setTimeout(() => {
+// 		resolve("Promise 2 for await method is resolved");
+// 	}, 10000);
+// });
+// const getDataWithAwaitMethod = async () => {
+// 	console.time("Time Started");
+// 	console.log("Operation STARTED...");
 
-	const data2 = await myPromiseForAwaitMethod2;
-	console.log(data2);
-	console.log("Inside getData 2 with await method");
-	console.timeEnd("Time Started");
-};
-getDataWithAwaitMethod();
+// 	const data1 = await myPromiseForAwaitMethod1;
+// 	console.log(data1);
+// 	console.log("Inside getData 1 with await method");
+
+// 	const data2 = await myPromiseForAwaitMethod2;
+// 	console.log(data2);
+// 	console.log("Inside getData 2 with await method");
+
+// 	console.timeEnd("Time Started");
+// };
+// getDataWithAwaitMethod();
+
+
