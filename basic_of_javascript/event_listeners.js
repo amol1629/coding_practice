@@ -25,8 +25,13 @@
  *                  - Purpose : Ensures the event listener is triggered "only once" after which it is automatically removed.
  *                  - Default value : false
  *
- *          1) passive :
+ *          3) passive :
  *                  - Purpose : Indicates that the event listener will never call preventDefault(), optimizing performance for scroll and touch events..
  *                  - Default value : false
+ * 
+ *          4) signal : 
+ *                  - Purpose : The listener will removed when the abort() method fo the AbortController which owns the AbortSignal is called.
+ *                  - If not specified, no AbortSignal is associated with the listener.
+ * 
  
  */
