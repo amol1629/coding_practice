@@ -56,5 +56,6 @@
 	"prettier.tabWidth": 4,
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": true,
-	"prettier.withNodeModules": true
+	"prettier.withNodeModules": true,
+	"better-comments.highlightPlainText": true
 }
