@@ -32,34 +32,35 @@ const inputField = document.getElementById("input-box");
 const DUMMY_PRODUCT_API = `https://dummyjson.com/products`;
 
 // Debouncing Function :
-const debounce = (fnc, delay = 500) => {
-	let timer;
+// const debounce = (fnc, delay = 500) => {
+// 	let timer;
 
-	return (...args) => {
-		clearTimeout(timer);
+// 	return (...args) => {
+// 		clearTimeout(timer);
 
-		timer = setTimeout(() => {
-			fnc.apply(this, args);
-		}, delay);
-	};
-};
+// 		timer = setTimeout(() => {
+// 			fnc.apply(this, args);
+// 		}, delay);
+// 	};
+// };
 
-const handleInputChange = async (e) => {
-	try {
-		const value = e.target.value;
-		console.log("Input : ", value);
-		const response = await fetch(
-			`https://dummyjson.com/products/search?q=${value}`
-		);
+// const handleInputChange = async (e) => {
+// 	try {
+// 		const value = e.target.value;
+// 		console.log("Input : ", value);
+// 		const response = await fetch(
+// 			`https://dummyjson.com/products/search?q=${value}`
+// 		);
 
-		const result = await response.json();
+// 		const result = await response.json();
 
-		console.log("Search Result : ", result);
-	} catch (error) {
-		console.error("Error while fetching products : ", error);
-	}
-};
+// 		console.log("Search Result : ", result);
+// 	} catch (error) {
+// 		console.error("Error while fetching products : ", error);
+// 	}
+// };
 
-const debounced = debounce(handleInputChange, 500);
+// const debounced = debounce(handleInputChange, 500);
 
-inputField.addEventListener("input", debounced);
+// inputField.addEventListener("input", debounced);
+
