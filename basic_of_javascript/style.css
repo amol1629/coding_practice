@@ -1,3 +1,7 @@
+/* body {
+	height: 800vh;
+} */
+
 .user-bio-block {
 	display: flex;
 	gap: 40px;

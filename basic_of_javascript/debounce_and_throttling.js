@@ -24,12 +24,33 @@
  *          1) May cause delays in function execution.
  *          2) Can be complex to implement.
  *
+ */
+
+/**
+ * * Throttling in JavaScript :
+ *  - Throttling is a technique in JavaScript used to control how often a particular function can be executed over a specified period.
+ *  - It is particularly useful in the scenario where a function is triggered frequently, such as during scrolling, resizing or keypress event.
+ *  - By throttling, you can limit the execution of the function to a specific rate, improving performance and preventing unnecessary computations.
+ *
+ *  - How Throttling Works :
+ *          => When you throttle a function, you ensure that it executed at most once every specified interval, even if it is triggered multiple times within that interval. This can be achieved by controlling when the function can run using timers and timestamps.
+ *
+ *  - When to use Throttling :
+ *          1) Scroll Event
+ *          2) Resize Event
+ *          3) API Calls
+ *          4) DOM Events
+ *
+ *  - Performance Benefits :
+ *          1) Reduces load
+ *          2) Optimizes UI
+ *          3) Improves Responsiveness.
  *
  */
 
-const inputField = document.getElementById("input-box");
+// const inputField = document.getElementById("input-box");
 
-const DUMMY_PRODUCT_API = `https://dummyjson.com/products`;
+// const DUMMY_PRODUCT_API = `https://dummyjson.com/products`;
 
 // Debouncing Function :
 // const debounce = (fnc, delay = 500) => {
@@ -64,3 +85,41 @@ const DUMMY_PRODUCT_API = `https://dummyjson.com/products`;
 
 // inputField.addEventListener("input", debounced);
 
+// Implementation of Throttling  Using setTimeout
+const clickMeButton = document.getElementById("click-me-button");
+// function throttle(func, interval) {
+// 	let allowExecution = true;
+
+// 	return function (...args) {
+// 		if (!allowExecution) return;
+
+// 		allowExecution = false;
+// 		setTimeout(() => {
+// 			func.apply(this, args);
+// 			allowExecution = true;
+// 		}, interval);
+// 	};
+// }
+
+// // Example Usage
+// const log = () =>
+// 	console.log("Throttled Event", new Date().toLocaleTimeString());
+// clickMeButton.addEventListener("click", throttle(log, 500));
+
+// Implementation of Throttling  Using timestamps
+// function throttle(func, interval) {
+// 	let lastExecutionTime = 0;
+
+// 	return function (...args) {
+// 		const now = Date.now();
+
+// 		if (now - lastExecutionTime >= interval) {
+// 			func.apply(this, args);
+// 			lastExecutionTime = now;
+// 		}
+// 	};
+// }
+
+// const printMessage = () =>
+// 	console.log("Throttled Event", new Date().toLocaleTimeString());
+// clickMeButton.addEventListener("click", throttle(printMessage, 2000));

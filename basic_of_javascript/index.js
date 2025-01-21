@@ -123,4 +123,18 @@
 
 // console.log("END");
 
+// console.log(false == []);
+// console.log(false == ![]);
 
+// console.log("" == []);
+
+// let name = "johnny";
+// name[2] = "o";
+// console.log(name);
+
+const numbers = [2, 3, 4, 5];
+
+const result = numbers.map((num) => num > 2);
+
+console.log("Result : ", result);
+console.log("Original : ", numbers);
