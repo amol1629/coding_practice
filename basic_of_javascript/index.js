@@ -159,3 +159,20 @@
 // 		console.log(j);
 // 	}, 1000);
 // }
+
+
+const name = "javascript";
+const nameArray = [...name];
+const vowels = ["a", "e", "i", "o", "u"];
+
+let vowelCount = 0;
+
+for (const char of nameArray) {
+	if (vowels.includes(char.toLowerCase())) {
+		vowelCount++;
+	}
+}
+
+console.log(`The string contains ${vowelCount} vowels.`);
+
+
