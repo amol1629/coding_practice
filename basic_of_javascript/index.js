@@ -138,3 +138,24 @@
 
 // console.log("Result : ", result);
 // console.log("Original : ", numbers);
+
+// for (let i = 0; i < 5; i++) {
+// 	setTimeout(() => {
+// 		console.log("Inside timeout (using let) : ", i);
+// 	}, 2000);
+// }
+
+//  Using IIFE (Immediately Invoked Function Expression) or setTimeout with an addition parameter to capture the current value of i, we can fix for "var" to mimic "let" behavior.
+// for (var i = 0; i < 5; i++) {
+// 	setTimeout(() => {
+// 		console.log("Inside timeout (using var) : ", i);
+// 	}, 2000);
+// }
+
+// for (var i = 0; i < 5; i++) {
+// 	let j = i;
+
+// 	setTimeout(() => {
+// 		console.log(j);
+// 	}, 1000);
+// }
