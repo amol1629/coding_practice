@@ -1,56 +1,69 @@
-/**
- * Problem Statement : From the given array, display the countries name in dropdown and in next dropdown display the respective cities from that country.
- *
- */
-
 import { useState } from "react";
-import "./App.css";
 
-function App() {
-	const [cities, setCities] = useState([]); // Initialize as an array
-	const countries = [
-		{ name: "India", value: "IN", cities: ["Mumbai", "Delhi"] },
-		{ name: "Pakistan", value: "PK", cities: ["Karachi", "Lahore"] },
-		{ name: "Bangladesh", value: "BAN", cities: ["Dhaka", "Chittagong"] },
-		{
-			name: "United States of America",
-			value: "USA",
-			cities: ["California", "New York"],
-		},
-	];
+export default function App() {
+  const [cities, setCities] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(""); // State for selected country
+  const [selectedCity, setSelectedCity] = useState(""); // State for selected city
 
-	const displayCityNames = (countryValue) => {
-		const selectedCountry = countries.find(
-			(country) => country.value === countryValue
-		);
-		if (selectedCountry) {
-			console.log("City Names:", selectedCountry.cities);
-			setCities(selectedCountry.cities);
-		}
-	};
+  const countries = [
+    { name: "India", value: "IN", cities: ["Mumbai", "Pune"] },
+    { name: "Bangladesh", value: "BAN", cities: ["Dhaka", "Chattigoan"] },
+    { name: "Pakistan", value: "PAK", cities: ["Karachi", "Lahore"] },
+  ];
 
-	return (
-		<div>
-			<div>
-				<select onChange={(e) => displayCityNames(e.target.value)}>
-					<option defaultValue="Selected">Select the country</option>
-					{countries.map((country) => (
-						<option key={country.value} value={country.value}>
-							{country.name}
-						</option>
-					))}
-				</select>
+  const displayCitiesName = (e) => {
+    const value = e.target.value;
+    const selectedCountryData = countries.find(
+      (country) => country.value === value
+    );
+    if (selectedCountryData) {
+      setSelectedCountry(selectedCountryData.name); // Update selected country
+      setCities(selectedCountryData.cities);
+      setSelectedCity(""); // Reset city selection
+    }
+  };
 
-				<select>
-					{cities.map((city) => (
-						<option key={city} value={city}>
-							{city}
-						</option>
-					))}
-				</select>
-			</div>
-		</div>
-	);
+  const handleCityChange = (e) => {
+    setSelectedCity(e.target.value); // Update selected city
+  };
+
+  return (
+    <div className="App">
+      <div>
+        <select onChange={displayCitiesName} defaultValue="Select the country">
+          <option value="" disabled>
+            Select the country
+          </option>
+          {countries.map((country) => (
+            <option value={country.value} key={country.value}>
+              {country.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {cities.length > 0 && (
+        <div style={{ margin: "10px" }}>
+          <select onChange={handleCityChange} value={selectedCity}>
+            <option value="" disabled>
+              Select a city
+            </option>
+            {cities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {selectedCountry && selectedCity && (
+        <div style={{ marginTop: "20px" }}>
+          <strong>Selected Country:</strong> {selectedCountry}
+          <br />
+          <strong>Selected City:</strong> {selectedCity}
+        </div>
+      )}
+    </div>
+  );
 }
-
-export default App;
