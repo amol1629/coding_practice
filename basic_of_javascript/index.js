@@ -160,6 +160,7 @@
 // 	}, 1000);
 // }
 
+<<<<<<< HEAD
 // *** map(), filter(), reduce() Interview Questions ***
 
 const nums = [10, 20, 30, 40];
@@ -169,3 +170,21 @@ const reduced = nums.reduce((accu, curr) => {
 });
 
 console.log("Reduced : ", reduced);
+=======
+
+const name = "javascript";
+const nameArray = [...name];
+const vowels = ["a", "e", "i", "o", "u"];
+
+let vowelCount = 0;
+
+for (const char of nameArray) {
+	if (vowels.includes(char.toLowerCase())) {
+		vowelCount++;
+	}
+}
+
+console.log(`The string contains ${vowelCount} vowels.`);
+
+
+>>>>>>> 4a6810630b1da7e4629222a148867de1660900fc
