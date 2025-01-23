@@ -160,31 +160,47 @@
 // 	}, 1000);
 // }
 
-<<<<<<< HEAD
 // *** map(), filter(), reduce() Interview Questions ***
 
-const nums = [10, 20, 30, 40];
+//  ** Symbol in JavaScript
+// const sym1 = Symbol("a");
+// const sym2 = Symbol("b");
+// const obj = {
+// 	[sym1]: "value1",
+// 	age: 30,
+// 	[sym2]: "value2",
+// 	name: "King",
+// };
 
-const reduced = nums.reduce((accu, curr) => {
-	return accu + curr;
-});
+// Event Bubbling and Even Capturing
 
-console.log("Reduced : ", reduced);
-=======
+const topDiv = document.getElementById("top-div");
+const midDiv = document.getElementById("mid-div");
+const bottomDiv = document.getElementById("bottom-div");
 
-const name = "javascript";
-const nameArray = [...name];
-const vowels = ["a", "e", "i", "o", "u"];
-
-let vowelCount = 0;
-
-for (const char of nameArray) {
-	if (vowels.includes(char.toLowerCase())) {
-		vowelCount++;
+topDiv.addEventListener(
+	"click",
+	(e) => {
+		alert("TOP DIV clicked");
+		e.stopPropagation();
 	}
-}
+	// { capture: true }
+);
 
-console.log(`The string contains ${vowelCount} vowels.`);
+midDiv.addEventListener(
+	"click",
+	(e) => {
+		alert("MID DIV clicked");
+		e.stopPropagation();
+	}
+	// { capture: true }
+);
 
-
->>>>>>> 4a6810630b1da7e4629222a148867de1660900fc
+bottomDiv.addEventListener(
+	"click",
+	(e) => {
+		alert("BOTTOM DIV clicked");
+		e.stopPropagation();
+	}
+	// { capture: true }
+);
