@@ -79,6 +79,8 @@
  *                                  => index (optional) : The index of the current element
  *                                  => array (optional) : The array reduce() was called upon.
  *                          => initialValue (optional) : Initial value of the accumulator.
+ * 
+ *  - In reduce() method, when an initial value isn't provided, reduce takes the first element of the array as the initial accumulator value and starts the iteration from the second element.
  *
  *  - Use Cases :
  *          1) Summing Array Elements : Finding the sum or total of array values

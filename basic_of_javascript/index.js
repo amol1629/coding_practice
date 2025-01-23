@@ -159,3 +159,13 @@
 // 		console.log(j);
 // 	}, 1000);
 // }
+
+// *** map(), filter(), reduce() Interview Questions ***
+
+const nums = [10, 20, 30, 40];
+
+const reduced = nums.reduce((accu, curr) => {
+	return accu + curr;
+});
+
+console.log("Reduced : ", reduced);
