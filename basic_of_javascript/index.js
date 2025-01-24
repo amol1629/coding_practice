@@ -160,53 +160,16 @@
 // 	}, 1000);
 // }
 
-// *** map(), filter(), reduce() Interview Questions ***
+// const name = "javascript";
+// const nameArray = [...name];
+// const vowels = ["a", "e", "i", "o", "u"];
 
-//  ** Symbol in JavaScript
-// const sym1 = Symbol("a");
-// const sym2 = Symbol("b");
-// const obj = {
-// 	[sym1]: "value1",
-// 	age: 30,
-// 	[sym2]: "value2",
-// 	name: "King",
-// };
+// let vowelCount = 0;
 
-// Event Bubbling and Even Capturing
-
-// const topDiv = document.getElementById("top-div");
-// const midDiv = document.getElementById("mid-div");
-// const bottomDiv = document.getElementById("bottom-div");
-
-// topDiv.addEventListener(
-// 	"click",
-// 	(e) => {
-// 		alert("TOP DIV clicked");
-// 		e.stopPropagation();
+// for (const char of nameArray) {
+// 	if (vowels.includes(char.toLowerCase())) {
+// 		vowelCount++;
 // 	}
-// 	// { capture: true }
-// );
+// }
 
-// midDiv.addEventListener(
-// 	"click",
-// 	(e) => {
-// 		alert("MID DIV clicked");
-// 		e.stopPropagation();
-// 	}
-// 	// { capture: true }
-// );
-
-// bottomDiv.addEventListener(
-// 	"click",
-// 	(e) => {
-// 		alert("BOTTOM DIV clicked");
-// 		e.stopPropagation();
-// 	}
-// 	// { capture: true }
-// );
-
-// console.log("Greater" > "elephant")
-
-// console.log("Type of undefined : ", typeof undefined);
-// console.log("Type of null : ", typeof null);
-// console.log("Type of NaN : ", typeof Nan);
+// console.log(`The string contains ${vowelCount} vowels.`);

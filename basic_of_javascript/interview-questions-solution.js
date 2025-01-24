@@ -169,13 +169,32 @@
  *  Q. Infinite Currying :
  */
 
-const infiniteCurrying = (a) => {
-	return (b) => {
-		if (a == undefined) return 0;
-		if (b) return infiniteCurrying(a + b);
+// const infiniteCurrying = (sum = 0) => {
+// 	return (num) => {
+// 		if (sum == undefined) return sum;
+// 		if (num) return infiniteCurrying(sum + num);
 
-		return a;
-	};
+// 		return sum;
+// 	};
+// };
+
+// console.log(infiniteCurrying(4)(40)());
+
+const numbers = [1, 2, 3, 4, 2, 3];
+
+const findDuplicates = (arr) => {
+	let duplicate = [];
+
+	const result = arr.filter((num) => {
+		if (duplicate.includes(num)) {
+			return true;
+		}
+
+		duplicate.push(num);
+		return false;
+	});
+
+	return result;
 };
 
-console.log(infiniteCurrying(6)(7)());
+console.log(findDuplicates(numbers));
