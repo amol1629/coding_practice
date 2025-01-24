@@ -174,33 +174,39 @@
 
 // Event Bubbling and Even Capturing
 
-const topDiv = document.getElementById("top-div");
-const midDiv = document.getElementById("mid-div");
-const bottomDiv = document.getElementById("bottom-div");
+// const topDiv = document.getElementById("top-div");
+// const midDiv = document.getElementById("mid-div");
+// const bottomDiv = document.getElementById("bottom-div");
 
-topDiv.addEventListener(
-	"click",
-	(e) => {
-		alert("TOP DIV clicked");
-		e.stopPropagation();
-	}
-	// { capture: true }
-);
+// topDiv.addEventListener(
+// 	"click",
+// 	(e) => {
+// 		alert("TOP DIV clicked");
+// 		e.stopPropagation();
+// 	}
+// 	// { capture: true }
+// );
 
-midDiv.addEventListener(
-	"click",
-	(e) => {
-		alert("MID DIV clicked");
-		e.stopPropagation();
-	}
-	// { capture: true }
-);
+// midDiv.addEventListener(
+// 	"click",
+// 	(e) => {
+// 		alert("MID DIV clicked");
+// 		e.stopPropagation();
+// 	}
+// 	// { capture: true }
+// );
 
-bottomDiv.addEventListener(
-	"click",
-	(e) => {
-		alert("BOTTOM DIV clicked");
-		e.stopPropagation();
-	}
-	// { capture: true }
-);
+// bottomDiv.addEventListener(
+// 	"click",
+// 	(e) => {
+// 		alert("BOTTOM DIV clicked");
+// 		e.stopPropagation();
+// 	}
+// 	// { capture: true }
+// );
+
+// console.log("Greater" > "elephant")
+
+// console.log("Type of undefined : ", typeof undefined);
+// console.log("Type of null : ", typeof null);
+// console.log("Type of NaN : ", typeof Nan);

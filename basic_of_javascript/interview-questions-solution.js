@@ -64,3 +64,118 @@
 // let stringToBeReversed = "Hello, World Man!";
 // const result = reverseWordsOptimized(stringToBeReversed);
 // console.log(`Reversed String: ${result}`);
+
+/**
+ *
+ *  - JavaScript compares strings lexicographically (dictionary order) based on their Unicode code points.
+ *
+ *  - The comparison is done character by character, starting from the first character of each string.
+ */
+// console.log("Greater" > "elephant")
+
+// ------------------------------------------------
+
+// Q. Difference between "map()" and "forEach()"
+// const numbers = [2, 4, 5, 6, 10];
+
+// numbers.forEach((num) => {
+// 	console.log(num * 10);
+// });
+
+// console.log("Original array after forEach : ", numbers);
+
+// const mapResult = numbers.map((num) => num * 2);
+
+// console.log(mapResult);
+
+// ------------------------------------------------
+
+/**
+ *  Q. Type Coercion Questions :
+ */
+// console.log(![] + []);
+// console.log(typeof (![] + []));
+// console.log([] == true);
+// console.log("" == true);
+// console.log("JavaScript" == true);
+
+// ------------------------------------------------
+
+/**
+ * Q. Object of Object in JavaScript :
+ *
+ *  - Objects used as keys in JavaScript objects are converted to strings.
+ *  - By default, the string representation of a plain object is "[object Object]".
+ *  - If multiple objects are used as keys, they can overwrite each other if they have the same string representation.
+ */
+
+// let a = {};
+// let b = { key: "a" };
+// let c = { key: "b" };
+
+// a[b] = 100; // a ["object object"] = 100
+// a[c] = 200; // a ["object object"] = 200
+
+// console.log(a[b]); // console.log(a ["object object]") => 200
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// ------------------------------------------------
+
+/**
+ * Q. Fibonacci Series :
+ */
+
+// function fibonacciIterative(n) {
+// 	let fib = [0, 1]; // Initialize the first two numbers of the Fibonacci series
+
+// 	if (n <= 1) return fib.slice(0, n); // Handle edge cases for n = 0 or n = 1
+
+// 	for (let i = 2; i < n; i++) {
+// 		fib.push(fib[i - 1] + fib[i - 2]); // Add the sum of the last two numbers
+// 	}
+
+// 	return fib;
+// }
+
+// // Example usage
+// console.log(fibonacciIterative(10));
+
+// ------------------------------------------------
+
+/**
+ * Q. Find duplicate elements from array :
+ */
+
+// const numbers = [1, 2, 3, 4, 5, 2, 4];
+
+// const findDuplicates = (arr) => {
+// 	let seen = [];
+// 	return arr.filter((num) => {
+// 		if (seen.includes(num)) {
+// 			return true; // It's a duplicate
+// 		}
+// 		seen.push(num); // Add to the seen array
+// 		return false; // Not a duplicate
+// 	});
+// };
+
+// console.log(findDuplicates(numbers)); // Output: [2, 4]
+
+// ------------------------------------------------
+
+/**
+ *  Q. Infinite Currying :
+ */
+
+const infiniteCurrying = (a) => {
+	return (b) => {
+		if (a == undefined) return 0;
+		if (b) return infiniteCurrying(a + b);
+
+		return a;
+	};
+};
+
+console.log(infiniteCurrying(6)(7)());
