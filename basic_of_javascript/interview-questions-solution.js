@@ -180,21 +180,37 @@
 
 // console.log(infiniteCurrying(4)(40)());
 
-const numbers = [1, 2, 3, 4, 2, 3];
+/**
+ * * Composition in JavaScript :
+ */
+// const compose =
+// 	(...functions) =>
+// 	(...args) =>
+// 		functions.reduceRight(
+// 			(acc, fn) => (Array.isArray(acc) ? fn(...acc) : fn(acc)),
+// 			args
+// 		);
 
-const findDuplicates = (arr) => {
-	let duplicate = [];
+// // This is the understandable version of above compose function.
+// const compose1 = (...functions) => {
+// 	return (...args) => {
+// 		return functions.reduceRight((acc, fn) => {
+// 			// If acc is an array, spread it; otherwise, pass it directly
+// 			return fn(...(Array.isArray(acc) ? acc : [acc]));
+// 		}, args);
+// 	};
+// };
 
-	const result = arr.filter((num) => {
-		if (duplicate.includes(num)) {
-			return true;
-		}
+// // Example functions
+// const add = (x, y) => x + y; // Takes two arguments
+// const multiply = (x) => x * 2; // Takes one argument
+// const square = (x) => x * x; // Takes one argument
 
-		duplicate.push(num);
-		return false;
-	});
+// // Composing functions
+// const result = compose(square, multiply, add)(5, 3);
+// // Execution flow:
+// // 1. add(5, 3) => 8
+// // 2. multiply(8) => 16
+// // 3. square(16) => 256
 
-	return result;
-};
-
-console.log(findDuplicates(numbers));
+// console.log(result); // Output: 256
