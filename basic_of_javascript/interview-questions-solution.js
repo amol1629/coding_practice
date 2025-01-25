@@ -214,3 +214,29 @@
 // // 3. square(16) => 256
 
 // console.log(result); // Output: 256
+
+// console.log(Number.isInteger('a'))
+
+const prom1 = new Promise((resolve, rejected) => {
+	resolve("I am resolved1.");
+});
+
+const prom2 = new Promise((resolve, rejected) => {
+	resolve("I am resolved2.");
+});
+
+const prom3 = new Promise((resolve, rejected) => {
+	rejected("I am resolved3.");
+});
+
+const allPromises = Promise.all([prom1, prom2, prom3]);
+const allPromises1 = Promise.allSettled([prom1, prom2, prom3]);
+
+allPromises
+	.then(() => {
+		console.log("All resolved");
+	})
+	.catch((e) => console.log("Error : ", e));
+
+// Promise.all()
+// p1, p2, p3
