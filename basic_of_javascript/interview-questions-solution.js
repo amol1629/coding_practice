@@ -196,7 +196,7 @@
 // 	return (...args) => {
 // 		return functions.reduceRight((acc, fn) => {
 // 			// If acc is an array, spread it; otherwise, pass it directly
-// 			return fn(...(Array.isArray(acc) ? acc : [acc]));
+// 			return Array.isArray(acc) ? fn(...acc) : fn(acc);
 // 		}, args);
 // 	};
 // };
@@ -207,7 +207,7 @@
 // const square = (x) => x * x; // Takes one argument
 
 // // Composing functions
-// const result = compose(square, multiply, add)(5, 3);
+// const result = compose1(square, multiply, add)(5, 3);
 // // Execution flow:
 // // 1. add(5, 3) => 8
 // // 2. multiply(8) => 16
@@ -215,28 +215,4 @@
 
 // console.log(result); // Output: 256
 
-// console.log(Number.isInteger('a'))
-
-const prom1 = new Promise((resolve, rejected) => {
-	resolve("I am resolved1.");
-});
-
-const prom2 = new Promise((resolve, rejected) => {
-	resolve("I am resolved2.");
-});
-
-const prom3 = new Promise((resolve, rejected) => {
-	rejected("I am resolved3.");
-});
-
-const allPromises = Promise.all([prom1, prom2, prom3]);
-const allPromises1 = Promise.allSettled([prom1, prom2, prom3]);
-
-allPromises
-	.then(() => {
-		console.log("All resolved");
-	})
-	.catch((e) => console.log("Error : ", e));
-
-// Promise.all()
-// p1, p2, p3
+// // console.log(Number.isInteger('a'))

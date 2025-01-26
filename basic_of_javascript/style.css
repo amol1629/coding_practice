@@ -28,7 +28,7 @@
 	margin-top: 20px;
 }
 
-#main-div-heading {
+h1 {
 	text-align: center;
 }
 
@@ -62,4 +62,26 @@
 	border-radius: 30px;
 	text-align: center;
 	background-color: lightblue;
+}
+
+#event-delegation-div {
+	border: 2px solid green;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+	background-color: rgb(241, 255, 254);
+	width: 50%;
+	margin: auto;
+	padding: 20px;
+}
+
+#todo-list li {
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+#todo-list li:hover {
+	color: green;
 }
