@@ -53,3 +53,5 @@
 
 // console.log(result); // Output: 256
 
+// Currying :
+
