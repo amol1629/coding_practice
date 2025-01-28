@@ -52,6 +52,3 @@
 // // 3. square(16) => 256
 
 // console.log(result); // Output: 256
-
-// Currying :
-

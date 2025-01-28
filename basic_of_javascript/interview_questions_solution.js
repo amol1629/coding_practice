@@ -215,8 +215,4 @@
 
 // console.log(result); // Output: 256
 
-// // console.log(Number.isInteger('a'))
-
-// Generalized curried function :
-
-
+// console.log(Number.isInteger('a'))
