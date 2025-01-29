@@ -216,3 +216,22 @@
 // console.log(result); // Output: 256
 
 // console.log(Number.isInteger('a'))
+
+function* generatorFunction() {
+	let num = 1;
+
+	while (true) {
+		yield num;
+		num++;
+	}
+}
+
+const generator = generatorFunction();
+
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
+console.log(generator.next());
