@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const TodoItemList = () => {
   const [todoList, setTodoList] = useState([
@@ -18,11 +18,7 @@ const TodoItemList = () => {
     },
   ]);
 
-  /*******************************************
-   * Function to toggle the todo item
-   * @param {*} index : The index of todo item
-   *******************************************/
-    
+
   const handleTodoChecked = (index) => {
     todoList[index].isChecked = !todoList[index].isChecked;
 

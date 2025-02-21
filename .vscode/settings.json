@@ -58,5 +58,6 @@
 	"prettier.vueIndentScriptAndStyle": true,
 	"prettier.withNodeModules": true,
 	"better-comments.highlightPlainText": true,
-	"editor.tabSize": 4
+	"editor.tabSize": 4,
+	"cSpell.words": ["stringifying", "writability"]
 }
