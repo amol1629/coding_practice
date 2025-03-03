@@ -2,13 +2,23 @@ import { getSingleProducts } from "@/lib/products";
 import Rating from "@/components/Rating"; // Assuming you've imported the Rating component
 import React from "react";
 import Image from "next/image"; // Import next/image
+import { notFound } from "next/navigation";
 
 const SingleProduct = async ({ params }: { params: { id: string } }) => {
 	const { id } = await params;
+	let result = null;
+	try {
+		result = await getSingleProducts(id);
+	} catch (error) {
+		console.log("Error: ", error);
+	} 
 
-	const result = await getSingleProducts(id);
+	
 
-	console.log("id: ", result);
+	// If no product is found, show the 404 page
+	if (!result) {
+		notFound(); // This will trigger the 404 page
+	}
 
 	// Destructure the product details
 	const { title, price, description, image, rating } = result;

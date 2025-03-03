@@ -45,9 +45,18 @@ export default function Header() {
 			</div>
 
 			{/* Bottom Section - Copyright */}
-			<p className="text-center text-purple-600 font-semibold text-sm">
-				Copyright@2025
-			</p>
+			<div className="">
+				<Link
+					className={`block w-full rounded-lg font-semibold px-4 py-2 border border-green-600 text-center transition-all duration-300 ease-linear text-green-600 hover:shadow-lg hover:shadow-green-600 hover:text-white hover:bg-green-600`}
+					href={"/login"}
+				>
+					Login
+				</Link>
+
+				<p className="mt-6 text-center text-purple-600 font-semibold text-sm">
+					Copyright@2025
+				</p>
+			</div>
 		</aside>
 	);
 }

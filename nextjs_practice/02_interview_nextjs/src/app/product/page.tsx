@@ -14,7 +14,7 @@ const ProductPage = async () => {
 
 			{/* Scrollable Products Section */}
 			<main className="flex-grow overflow-y-auto  ">
-				<div className="w-full mx-auto bg-white rounded-xl shadow-lg px-12 ">
+				<div className="w-full mx-auto bg-white rounded-xl shadow-lg px-8 ">
 					<AllProducts allProducts={allProducts} />
 				</div>
 			</main>

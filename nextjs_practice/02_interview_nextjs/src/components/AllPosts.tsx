@@ -16,6 +16,7 @@ import { formatDate } from "@/lib/formatDate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDay } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Button from "./Button";
 
 const AllPosts = ({
 	posts,
@@ -29,7 +30,7 @@ const AllPosts = ({
 	loading: boolean;
 }) => {
 	return (
-		<div className="relative p-8 max-h-[8rvh] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+		<div className="relative p-8 max-h-[80vh] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
 			{posts?.map((post, index) => (
 				<Card
 					key={`${post.id}-${index}`}
@@ -90,12 +91,9 @@ const AllPosts = ({
 			{/* Load More Button */}
 			{posts && hasMore && !loading && (
 				<div className="w-full flex justify-end items-end">
-					<button
-						onClick={loadMore}
-						className="bg-blue-500 text-white px-4 py-2 rounded-md"
-					>
+					<Button onClick={loadMore} variant="primary">
 						Load More
-					</button>
+					</Button>
 				</div>
 			)}
 

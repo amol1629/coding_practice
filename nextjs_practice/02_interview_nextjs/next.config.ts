@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
 				protocol: "https",
 				hostname: "lloremflickr.com",
 			},
+			{
+				protocol: "https",
+				hostname: "cdn.vectorstock.com",
+			},
 		],
 	},
 };
