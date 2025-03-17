@@ -4,12 +4,12 @@ This document contains a list of frequently asked JavaScript interview questions
 
 ## Table of Contents
 
-- [Basic Questions](#basic-questions)
-- [Intermediate Questions](#intermediate-questions)
-- [Advanced Questions](#advanced-questions)
-- [Coding Questions](#coding-questions)
+- [Basic Questions](#1-basic-questions "Basic Questions")
+- [Intermediate Questions](#2-intermediate-questions "Intermediate Questions")
+- [Advanced Questions](#3-advanced-questions "Advance Questions")
+- [Coding Questions](#4-coding-questions "Coding Questions")
 
-### Basic Questions
+### [1) Basic Questions](#1-basic-questions "Basic Questions")
 
 1. **What is JavaScript, and how is it different from Java?**
 2. **What are the different data types in JavaScript?**
@@ -42,7 +42,7 @@ This document contains a list of frequently asked JavaScript interview questions
 29. **What is the `eval()` function, and why is it discouraged?**
 30. **What is `Symbol` in JavaScript, and where is it used?**
 
-### Intermediate Questions
+### [2) Intermediate Questions](#2-intermediate-questions "Intermediate Questions")
 
 1. **Explain the concept of prototypal inheritance.**
 2. **What is the event loop, and how does it work?**
@@ -75,7 +75,7 @@ This document contains a list of frequently asked JavaScript interview questions
 29. **What are JavaScript design patterns? Name a few common ones.**
 30. **Explain what functional programming is and its principles.**
 
-### Advanced Questions
+### [3) Advance Questions](#3-advance-questions "Advance Questions")
 
 1. **Explain the concept of "this" keyword in different contexts.**
 2. **What is the difference between deep copy and shallow copy?**
@@ -108,7 +108,7 @@ This document contains a list of frequently asked JavaScript interview questions
 29. **What is a dynamic import, and when is it used?**
 30. **Explain what the Module Pattern is and its advantages.**
 
-### Coding Questions
+### [4) Coding Questions](#4-coding-questions "Coding Questions")
 
 1. **Reverse a string in JavaScript without using built-in functions.**
 2. **Write a function to check if a string is a palindrome.**
@@ -140,3 +140,93 @@ This document contains a list of frequently asked JavaScript interview questions
 28. **Implement a function to validate if a string has balanced parentheses.**
 29. **Write a function to perform a deep clone of an object.**
 30. **Implement a function to compute the power of a number using recursion.**
+
+---
+
+# JavaScript Interview Questions for Front End Interviews
+
+## About
+
+This document contains a collection of JavaScript interview questions commonly asked in front-end development interviews. These questions cover various topics, including event delegation, closures, prototypal inheritance, JavaScript ES6+ features, and more.
+
+---
+
+## JavaScript Interview Questions
+
+### General JavaScript Concepts
+
+* Explain event delegation.
+* Explain how `this` works in JavaScript.
+* Explain how prototypal inheritance works.
+* What do you think of AMD vs CommonJS?
+* Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+* What's the difference between a variable that is: `null`, `undefined`, or undeclared? How would you check for each state?
+* What is a closure, and how/why would you use one?
+* Can you describe the main difference between a `.forEach` loop and a `.map()` loop and why you would pick one over the other?
+* What's a typical use case for anonymous functions?
+* How do you organize your code? (Module pattern, classical inheritance?)
+* What's the difference between host objects and native objects?
+* Difference between:
+  * `function Person(){}`
+  * `var person = Person();`
+  * `var person = new Person();`
+* What's the difference between `.call` and `.apply`?
+* Explain `Function.prototype.bind`.
+* When would you use `document.write()`?
+* What's the difference between feature detection, feature inference, and using the UA string?
+
+### AJAX & JSON
+
+* Explain AJAX in as much detail as possible.
+* What are the advantages and disadvantages of using AJAX?
+* Explain how JSONP works (and how it's not really AJAX).
+* Have you ever used JavaScript templating? If so, what libraries have you used?
+
+### JavaScript Fundamentals
+
+* Explain "hoisting".
+* Describe event bubbling.
+* What's the difference between an "attribute" and a "property"?
+* Why is extending built-in JavaScript objects not a good idea?
+* Difference between `document` load event and `document DOMContentLoaded` event?
+* What is the difference between `==` and `===`?
+* Explain the same-origin policy with regard to JavaScript.
+
+### ES6+ Features
+
+* Why is it called a ternary expression? What does "ternary" indicate?
+* What is `"use strict";`? What are the advantages and disadvantages of using it?
+* Create a for loop that iterates up to 100 while outputting:
+  * "fizz" at multiples of 3
+  * "buzz" at multiples of 5
+  * "fizzbuzz" at multiples of both 3 and 5.
+* Why is it a good idea to leave the global scope of a website untouched?
+* Why would you use the `load` event? Does this event have disadvantages? Do you know any alternatives?
+* Explain what a single-page application (SPA) is and how to make one SEO-friendly.
+* What is the extent of your experience with Promises and/or their polyfills?
+* What are the pros and cons of using Promises instead of callbacks?
+* What are some of the advantages/disadvantages of writing JavaScript in a language that compiles to JavaScript?
+* What tools and techniques do you use for debugging JavaScript code?
+* What language constructions do you use for iterating over object properties and array items?
+
+### JavaScript Internals
+
+* Explain the difference between mutable and immutable objects.
+* Explain the difference between synchronous and asynchronous functions.
+* What is the event loop? What is the difference between the call stack and the task queue?
+* Explain the differences in usage of `foo` between:
+  * `function foo() {}`
+  * `var foo = function() {}`
+* What are the differences between variables created using `let`, `var`, or `const`?
+* What are the differences between ES6 class and ES5 function constructors?
+* Can you offer a use case for the new arrow `=>` function syntax? How does this new syntax differ from other functions?
+* What advantage is there for using the arrow syntax for a method in a constructor?
+* What is a higher-order function?
+* Can you give an example of destructuring an object or an array?
+* ES6 Template Literals offer flexibility in generating strings. Can you give an example?
+* Can you give an example of a curry function and explain why this syntax offers an advantage?
+* What are the benefits of using spread syntax and how is it different from rest syntax?
+* How can you share code between files?
+* Why might you want to create static class members?
+
+---
