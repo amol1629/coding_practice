@@ -36,7 +36,7 @@ Here is a list of all the built-in React hooks along with their official documen
 
 ---
 
-## [useEffect Hook](#useeffect-hook)
+## [2) useEffect Hook](#useeffect-hook)
 
 `useEffect` is a fundamental hook in React that allows you to perform side effects in function components. It serves as a replacement for lifecycle methods such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
 
@@ -161,18 +161,4 @@ const DataFetcher = () => {
 export default DataFetcher;
 ```
 
-## Conclusion
-
-`useEffect` is an essential tool for handling side effects in React function components. By understanding how it works and following best practices, you can efficiently manage component lifecycle events and side effects.
-
 ---
-
-Happy coding! 🚀
-
-## useState
-
-This section is about useState.
-
-## useEffect
-
-This section is about useEffect.
