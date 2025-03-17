@@ -14,9 +14,9 @@ Here is a list of all the built-in React hooks along with their official documen
 
 ## Basic Hooks
 
-* [useState](#usestate-hook)
+* [useState](#1-usestate-hook "useState Hook")
 * [useEffect](#2-useeffect-hook "useEffect Hook")
-* [useContext](https://react.dev/reference/react/useContext)
+* [useContext](#3-usecontext-hook "useContext Hook")
 
 ## Additional Hooks
 
@@ -34,7 +34,7 @@ Here is a list of all the built-in React hooks along with their official documen
 
 ---
 
-# [useState Hook](#usestate-hook)
+# [1) useState Hook](#1-usestate-hook "useState Hook")
 
 ## Introduction
 
@@ -282,5 +282,167 @@ export default DataFetcher;
 ## Conclusion
 
 The `useEffect` is an essential tool for handling side effects in React function components. By understanding how it works and following best practices, you can efficiently manage component lifecycle events and side effects.
+
+---
+
+
+
+## [3) useContext Hook](#3-usecontext-hook "useContext Hook")
+
+## Introduction
+
+The `useContext` hook is a built-in React hook that allows functional components to subscribe to context changes. It provides a way to pass data through the component tree without having to pass props manually at every level.
+
+## Why useContext?
+
+In large applications, prop drilling (passing props from parent to child repeatedly) becomes difficult to manage. The `useContext` hook helps avoid prop drilling by enabling components to directly access context values without explicitly passing them as props.
+
+## Syntax
+
+```jsx
+const value = useContext(MyContext);
+```
+
+* **`MyContext`** : The context object created using `React.createContext()`.
+* **Returns** : The current context value.
+
+## Creating and Using Context with useContext
+
+### 1. Create a Context
+
+```jsx
+import React, { createContext } from 'react';
+
+const ThemeContext = createContext("light");
+```
+
+### 2. Provide Context Value
+
+Wrap the component tree with the `Provider` and pass the context value.
+
+```jsx
+import React, { useState } from 'react';
+import { ThemeContext } from './ThemeContext';
+import ChildComponent from './ChildComponent';
+
+function App() {
+  const [theme, setTheme] = useState("light");
+
+  return (
+    <ThemeContext.Provider value={theme}>
+      <ChildComponent />
+      <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>Toggle Theme</button>
+    </ThemeContext.Provider>
+  );
+}
+
+export default App;
+```
+
+### 3. Consume Context with useContext
+
+```jsx
+import React, { useContext } from 'react';
+import { ThemeContext } from './ThemeContext';
+
+function ChildComponent() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <div style={{ background: theme === "light" ? "#fff" : "#333", color: theme === "light" ? "#000" : "#fff" }}>
+      Current Theme: {theme}
+    </div>
+  );
+}
+
+export default ChildComponent;
+```
+
+## When to Use useContext
+
+* **Global state management** : When a piece of state is required by multiple components.
+* **Avoiding prop drilling** : If a deeply nested component needs access to state without passing it through intermediate components.
+* **Sharing themes, authentication, or localization settings** .
+
+## Limitations of useContext
+
+* Not ideal for frequently updating state (e.g., complex global state management). In such cases, consider **Redux** or  **useReducer** .
+* Every re-render of the provider triggers all consumer components to re-render, even if the value hasn’t changed.
+
+## Optimizing useContext Performance
+
+* **Memoize Context Value** : To prevent unnecessary re-renders, use `useMemo`:
+
+```jsx
+import React, { createContext, useState, useMemo } from 'react';
+
+const ThemeContext = createContext();
+
+function App() {
+  const [theme, setTheme] = useState("light");
+
+  const value = useMemo(() => ({ theme, setTheme }), [theme]);
+
+  return (
+    <ThemeContext.Provider value={value}>
+      <ChildComponent />
+    </ThemeContext.Provider>
+  );
+}
+```
+
+* **Use Separate Contexts** : If different state values don’t depend on each other, create multiple contexts instead of a single one.
+
+## Alternative: useContext with useReducer
+
+For better state management, combine `useContext` with `useReducer`:
+
+```jsx
+import React, { useReducer, createContext, useContext } from 'react';
+
+const ThemeContext = createContext();
+
+const themeReducer = (state, action) => {
+  switch (action.type) {
+    case "TOGGLE_THEME":
+      return state === "light" ? "dark" : "light";
+    default:
+      return state;
+  }
+};
+
+function ThemeProvider({ children }) {
+  const [theme, dispatch] = useReducer(themeReducer, "light");
+  return (
+    <ThemeContext.Provider value={{ theme, dispatch }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ChildComponent() {
+  const { theme, dispatch } = useContext(ThemeContext);
+  return (
+    <div>
+      <p>Current Theme: {theme}</p>
+      <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>Toggle Theme</button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <ChildComponent />
+    </ThemeProvider>
+  );
+}
+
+export default App;
+```
+
+## Conclusion
+
+The `useContext` hook is a powerful tool for managing global state and avoiding prop drilling. However, it should be used carefully to prevent unnecessary re-renders. For more complex state management, `useReducer` or external state management libraries like Redux may be better choices.
 
 ---
