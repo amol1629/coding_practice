@@ -34,7 +34,7 @@ Here is a list of all the built-in React hooks along with their official documen
 
 ---
 
-# [1) useState Hook](#usestate-hook)
+# [useState Hook](#usestate-hook)
 
 ## Introduction
 
@@ -157,7 +157,7 @@ The `useState` hook is a powerful way to manage local state in functional compon
 
 
 
-# [2) useEffect Hook](#useeffect-hook)
+# [useEffect Hook](#useeffect-hook)
 
 `useEffect` is a fundamental hook in React that allows you to perform side effects in function components. It serves as a replacement for lifecycle methods such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
 
