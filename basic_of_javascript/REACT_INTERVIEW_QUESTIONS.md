@@ -15,7 +15,7 @@ Here is a list of all the built-in React hooks along with their official documen
 ## Basic Hooks
 
 * [useState](#usestate-hook)
-* [useEffect](#useeffect-hook)
+* [useEffect](#2-useeffect-hook "useEffect Hook")
 * [useContext](https://react.dev/reference/react/useContext)
 
 ## Additional Hooks
@@ -152,12 +152,9 @@ setItems(prevItems => [...prevItems, newItem]);
 
 The `useState` hook is a powerful way to manage local state in functional components. Understanding its nuances helps in writing efficient and bug-free React applications.
 
-
 ---
 
-
-
-# [useEffect Hook](#useeffect-hook)
+# [2) useEffect Hook](#2-useeffect-hook "useEffect Hook")
 
 `useEffect` is a fundamental hook in React that allows you to perform side effects in function components. It serves as a replacement for lifecycle methods such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
 
