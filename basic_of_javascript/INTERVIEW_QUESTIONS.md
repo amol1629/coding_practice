@@ -75,7 +75,7 @@ This document contains a list of frequently asked JavaScript interview questions
 29. **What are JavaScript design patterns? Name a few common ones.**
 30. **Explain what functional programming is and its principles.**
 
-### [3) Advance Questions](#3-advance-questions "Advance Questions")
+### [3) Advance Questions](#3-advanced-questions "Advance Questions")
 
 1. **Explain the concept of "this" keyword in different contexts.**
 2. **What is the difference between deep copy and shallow copy?**
