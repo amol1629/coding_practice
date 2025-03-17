@@ -6,7 +6,7 @@
  * - There are three phases of event propagation:
  *                  1) Capture phase : The event goes from root document to the target element. (value : true)
  *                  2) Target phase : The event reached the target element.
- *                  3) Bubble phase : The event bubbles up from the target element back to the root. (value : false and it is default phase)
+ *                  3) Bubble phase (   Default phase ) : The event bubbles up from the target element back to the root. (value : false and it is default phase)
  *
  *
  */
