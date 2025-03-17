@@ -12,11 +12,9 @@
 
 Here is a list of all the built-in React hooks along with their official documentation links:
 
-## Introduction
-
 ## Basic Hooks
 
-* [useState](#usestate)
+* [useState](#usestate-hook)
 * [useEffect](#useeffect-hook)
 * [useContext](https://react.dev/reference/react/useContext)
 
@@ -36,7 +34,130 @@ Here is a list of all the built-in React hooks along with their official documen
 
 ---
 
-## [2) useEffect Hook](#useeffect-hook)
+# [1) useState Hook](#usestate-hook)
+
+## Introduction
+
+The `useState` hook is a fundamental React Hook that allows functional components to manage state. Introduced in React 16.8, it replaces the need for class components when dealing with state management.
+
+## Syntax
+
+```javascript
+const [state, setState] = useState(initialState);
+```
+
+- `state`: The current state value.
+- `setState`: A function to update the state.
+- `initialState`: The default value of the state (can be a primitive, object, array, or function).
+
+## Example Usage
+
+### 1. Basic Example (Counter)
+
+```javascript
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+
+## Updating State
+
+### 2. Using Previous State
+
+When updating the state based on the previous value, use a function inside `setState` to ensure correctness:
+
+```javascript
+setCount(prevCount => prevCount + 1);
+```
+
+### 3. Updating Objects in State
+
+If state is an object, spread the existing state to retain other properties:
+
+```javascript
+const [user, setUser] = useState({ name: 'John', age: 25 });
+
+setUser(prevUser => ({ ...prevUser, age: 26 }));
+```
+
+### 4. Updating Arrays in State
+
+To update an array, spread the existing array and add new items:
+
+```javascript
+const [items, setItems] = useState([1, 2, 3]);
+
+setItems(prevItems => [...prevItems, 4]);
+```
+
+## Lazy Initialization
+
+If the initial state is computationally expensive, pass a function to `useState`:
+
+```javascript
+const [count, setCount] = useState(() => {
+    console.log('Expensive computation');
+    return 0;
+});
+```
+
+This function runs only on the first render, improving performance.
+
+## Rules of useState
+
+1. **Only call `useState` at the top level** – Do not use it inside loops, conditions, or nested functions.
+2. **Only use inside React components** – Hooks must be used in functional components or custom hooks.
+3. **State updates are asynchronous** – React batches multiple state updates to optimize performance.
+
+## Common Pitfalls
+
+### 1. Directly Modifying State
+
+Avoid modifying state directly:
+
+```javascript
+// ❌ Wrong
+user.age = 30;
+setUser(user);
+```
+
+Instead, use:
+
+```javascript
+// ✅ Correct
+setUser(prevUser => ({ ...prevUser, age: 30 }));
+```
+
+### 2. Not Preserving Previous State
+
+For objects and arrays, always spread the previous state:
+
+```javascript
+setItems(prevItems => [...prevItems, newItem]);
+```
+
+## Conclusion
+
+The `useState` hook is a powerful way to manage local state in functional components. Understanding its nuances helps in writing efficient and bug-free React applications.
+
+
+---
+
+
+
+# [2) useEffect Hook](#useeffect-hook)
 
 `useEffect` is a fundamental hook in React that allows you to perform side effects in function components. It serves as a replacement for lifecycle methods such as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in class components.
 
@@ -160,5 +281,9 @@ const DataFetcher = () => {
 
 export default DataFetcher;
 ```
+
+## Conclusion
+
+The `useEffect` is an essential tool for handling side effects in React function components. By understanding how it works and following best practices, you can efficiently manage component lifecycle events and side effects.
 
 ---
