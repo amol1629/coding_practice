@@ -15,6 +15,7 @@
  *  ? Partial Application vs Currying :
  *          => Currying always transforms a function so that it takes one argument at a time.
  *          => Partial application fixes some arguments of a function, creating a new function with a reduced number of arguments.
+ *          => Partial application means that you can call a function with fewer arguments than it expects.
  *
  *  - Practical Applications of Currying :
  *          1) Event handling with currying.

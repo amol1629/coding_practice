@@ -10,6 +10,12 @@
  *
  *  - We can invoke the call() method immediately by passing individual arguments and it does not returns a new function like bind();
  *  - The call() borrow a method from one object to another.
+ * 
+ * 	- Return value of call() :
+ * 					==> The call() method calls a function with a given "this" value and arguments provided individually.
+ * 					==> It returns the result of the function call.
+ * 					==> If the function returns a value, the call() method returns the value.
+ *					==> If the function does not return a value, the call() method returns undefined.
  *
  *
  *  * Apply() Method :
@@ -24,8 +30,13 @@
  *  - We can invoke the apply() method immediately by passing  arguments in array and it does not returns a new function like bind();
  *  - Use apply() method when arguments are already in an array or array-like object.
  *
+ *	- Return value of apply() :
+ * 					==> The apply() method calls a function with a given "this" value and arguments provided as an array.
+ * 					==> It returns the result of the function call.
+ * 					==> If the function returns a value, the apply() method returns the value.	
+ * 					==> If the function does not return a value, the apply() method returns undefined.
  *
- *
+ * 
  * * Bind() Method :
  *  - The bind() method returns a new function with a specific this context and optional arguments pre-applied, without immediately calling the function.
  *
@@ -37,7 +48,14 @@
  *
  *  - In bind() method, we can not call it immediately, we pass arguments to it individually and it returns a new bound function.
  *  - The bind() method creates a function with a fixed "this" context, useful for event handling or partial application.
+ * 
+ * 	- Return value of bind() :
+ * 					==> The bind() method creates a new function that, when called, has its "this" keyword set to the provided value.
+ * 					==> It allows an object to use a method belonging to another object.
+ * 					==> It returns a new function with the specified "this" value and initial arguments.
+ * 					==> The new function does not execute immediately.
  *
+ * 
  *  ? Function Borrowing :
  * 			=> Function borrowing allows an object to use the method belonging to another object.
  * 			=> Function borrowing is commonly  done using call(), apply(), or bind(), which explicitly set the "this" context of a function to another object.

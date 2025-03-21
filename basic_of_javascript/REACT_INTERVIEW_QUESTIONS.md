@@ -1,6 +1,6 @@
 # What is React?
 
-* React is a popular open-source JavaScript library developed by Facebook for building user interfaces, particularly for single-page applications (SPAs). It allows developers to create reusable UI components and manage the state of their applications efficiently.
+* *React is a popular open-source JavaScript library developed by Facebook for building user interfaces, particularly for single-page applications (SPAs). It allows developers to create reusable UI components and manage the state of their applications efficiently.*
 * React follows a component-based architecture, making it easier to build complex UIs by breaking them down into smaller, manageable pieces.
 
 # What is JSX?

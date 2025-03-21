@@ -4,7 +4,7 @@
  *  - Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.
  *  - Promise objects are immutable, meaning that once a promise is resolved or rejected, it cannot be resolved or rejected again.
  *
- *  - Promises have three states:
+ *  ? Promises have three states:
  *  	  	1) Pending : Initial state, neither fulfilled nor rejected.
  *  	 	2) Fulfilled : Meaning that the operation completed successfully and result is available.
  *  	  	3) Rejected : Meaning that the operation failed.
@@ -25,23 +25,23 @@
  *
  * 			3) finally() : The .finally() method is called after the promise is settled, regardless of whether it was fulfilled or rejected. It is often used for cleanup tasks.
  *
- * - Promise Methods :
- *  	  	1) Promise.all() :
+ *  ? Promise Methods :
+ *  	  	* 1) Promise.all() :
  * 						- Takes an array of promises and resolves when all the promises in the array have resolved.
  * 						- Success : Returns an array of the resolved values.
  * 						- Failure : Returns the error of the first rejected promise.
  *
- *  	  	2) Promise.allSettled() :
+ *  	  	* 2) Promise.allSettled() :
  * 						- Takes an array of promises and resolves after all the promises have either resolved or rejected.
  * 						- Success : Returns an array of objects representing the status (status: 'fulfilled') of each promise along with the value of the promise.
  * 						- Failure : Returns an array with all rejection reasons, marked with status: 'rejected'.
  *
- * 	  		3) Promise.any() :
+ * 	  		* 3) Promise.any() :
  * 						- Takes an array of promises and resolves when any of the promises in the array have resolved.
  * 						- Success : Returns the value of the first resolved promise.
  * 						- Failure : Returns an AggregateError object containing an array of errors.
  *
- * 	  		4) Promise.race() :
+ * 	  		* 4) Promise.race() :
  * 						- Takes an array of promises and resolves or rejects as soon as one of the promises in the array resolves or rejects.
  * 						- Success : Returns the value of the first resolved or rejected promise.
  * 						- Failure : Returns the error of the first rejected promise.
@@ -182,7 +182,35 @@
 
 // Promise.any([promise1, promise2, promise3])
 // 	.then((result) => {
+// 		console.log("Promise.any() Result : ", result);
+// 	})
+// 	.catch((error) => {
+// 		console.error("Promise.all() Error : ", error);
+// 		console.log(error.errors);
+// 	});
+
+// Promise.all([promise1, promise2, promise3])
+// 	.then((result) => {
 // 		console.log("Promise.all() Result : ", result);
+// 	})
+// 	.catch((error) => {
+// 		console.error("Promise.all() Error : ", error);
+// 		console.log(error.errors);
+// 	});
+
+// Promise.allSettled([promise1, promise2, promise3])
+// 	.then((result) => {
+// 		console.log("Promise.allSettled() Result : ", result);
+// 	})
+// 	.catch((error) => {
+// 		console.error("Promise.all() Error : ", error);
+// 		console.log(error.errors);
+// 	}); 
+
+
+// Promise.race([promise1, promise2, promise3])
+// 	.then((result) => {
+// 		console.log("Promise.race() Result : ", result);
 // 	})
 // 	.catch((error) => {
 // 		console.error("Promise.all() Error : ", error);

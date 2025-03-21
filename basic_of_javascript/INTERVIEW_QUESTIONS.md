@@ -6,7 +6,7 @@ This document contains a list of frequently asked JavaScript interview questions
 
 - [Basic Questions](#1-basic-questions "Basic Questions")
 - [Intermediate Questions](#2-intermediate-questions "Intermediate Questions")
-- [Advanced Questions](#3-advanced-questions "Advance Questions")
+- [Advanced Questions](#3-advanced-questions "Advanced Questions")
 - [Coding Questions](#4-coding-questions "Coding Questions")
 
 ### [1) Basic Questions](#1-basic-questions "Basic Questions")

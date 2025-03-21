@@ -56,9 +56,9 @@
  *      17) flat() ==> Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
  *
  *      18) flatMap() ==> First map each element using mapping function, then flattens the result into a new array.
- * 
+ *
  *      ? 19) toSorted() ==> Returns a new array with the elements of the array in sorted order.
- * 
+ *
  *      ? 20) toReversed() ==> Returns a new array with the elements of the array in reversed order.
  */
 
@@ -191,6 +191,10 @@
  *
  *  ! slice() Method :
  *  - The slice() method creates a shallow copy of a portion of an array into a new array object without modifying the original array.
+ * 
+ *  - Syntax : array.slice(startIndex, endIndex)
+ *          ==> startIndex : The index at which to begin the extraction. If omitted, it defaults to 0 and will return the entire array.
+ *          ==> endIndex : The index at which to end the extraction (exclusive). If omitted, it will extract to the end of the array.
  *
  *  - It takes two optional parameters :
  *      1) the start index ==> The index at which to begin the extraction. If omitted, it defaults to 0 and wil return the exact original array (sometimes used for copying the array).
@@ -200,6 +204,7 @@
  *  - It does not modify the original array.
  *  - It returns a new array containing the selected elements.
  *  - The negative indices can be used to count from the end of the array.
+ * 
  *  - Slice method return an empty array only when :
  *          1) start index is greater than or equal to end index after normalization or
  *          2) Both the indices are out of bounds for the array.
@@ -219,13 +224,14 @@
  *  - It modifies the original array and returns an array containing the removed elements.
  *  - It is mutator method.
  *
- *  - Syntax  ==> array.splice(startIndex, deleteCount, item1, item2, ..., itemN);
- *
- *  - It takes at least two parameters : 1) startIndex 2) deleteCount 3) additional elements can be added after these parameters :
- *              1) startIndex ==> The start index is the position at which to start changing the array. If it is greater than the length of the array, the method will simply append the new elements to the end of the array.
- *              2) deleteCount ==> The number of elements to remove. If omitted, all elements from the startIndex to the end of the array are removed.
- *              3) items to add (optional) ==> The elements to add the array, starting at startIndex.
- *
+ *  - Syntax : array.splice(startIndex, deleteCount, item1, item2, ..., itemN);
+ *              ==> startIndex : The index at which to start changing the array. If greater than the length of the array, the start index will be set to the array's length.
+ *              ==> deleteCount : The number of elements to remove. If omitted, all elements from the startIndex to the end of the array are removed.
+ *              ==> item1, item2, ..., itemN (optional): The elements to add to the array, starting at the startIndex.
+ * 
+ *  - If deleteCount is 0, no elements are removed, but elements can still be added.
+ *  - If deleteCount is greater than the number of elements remaining in the array starting at the startIndex, only the available elements are removed.
+ * 
  *  - You can add new elements by specifying them after the deleteCount.
  *
  *  - For splice() :
@@ -263,6 +269,10 @@
  *
  *  - The find() method stops iterating once it finds a match, making it more efficient than methods like filter() if only one result is needed.
  *  - It returns "undefined" if no element satisfies the condition.
+ * 
+ *  - Return Values : 
+ *              ==> The first element in the array that satisfies the provided testing function.
+ *              ==> undefined if no element satisfies the testing function.
  *
  *******************************************************************************/
 // const findArray = [10, 20, 30, 40, 50];
@@ -530,20 +540,19 @@
 // let sortedStr = str.split("").sort().join("");
 // console.log(sortedStr);
 
-
 /********************************************************************************
  *
  *  ! toSorted() Method :
  *  - The toSorted() method in JavaScript is a new method introduced in ECMAScript 2023 (ES23) that sorts an array without modifying the origin array.
  *  - It returns a new sorted array.
  *  - For arrays, it is accessor method that returns a new array with the elements sorted in ascending order.
- *  - 
+ *  -
  *  - Syntax :  const newArray = array.toSorted(compareFunction);
  *          ==> compareFunction (optional) : A function that defines the sort order. If omitted, the array is sorted based on the Unicode code points of the elements.
- * 
+ *
  *  - The toSorted() method is similar to the sort() method, but it does not modify the original array.
  *  - It returns the new sorted array keeping the original array intact.
- * 
+ *
  *  - The toSorted() works like sort() and converts numbers to strings before sorting.
  *  - It also works with mixed data types and sorts them based on their Unicode code points.
  *  - It also works with objects and sorts them based on their reference.
@@ -560,14 +569,12 @@
 // console.log(sortedArr); // Output: [5, 20, 30, 50, 100]
 // console.log(arr);       // Output: [30, 5, 20, 100, 50] (unchanged)
 
-
 // const names = ["Banana", "apple", "Mango", "cherry"];
 
 // const sortedNames = names.toSorted();
 
 // console.log(sortedNames); // Output: ["Banana", "Mango", "apple", "cherry"]
 // console.log(names);       // Output: ["Banana", "apple", "Mango", "cherry"] (unchanged)
-
 
 // const users = [
 //   { name: "Alice", age: 30 },
@@ -588,20 +595,19 @@
 
 // console.log(users); // Original array remains unchanged
 
-
 /********************************************************************************
  *
  *  ! reverse() Method :
  *  - The reverse() method is used to reverse the elements of an array in place, meaning it mutates the original array.
  *  - It is a mutator method.
- * 
+ *
  *  - The reverse() method changes the order of the elements in the array so that the first element becomes the last, the second element becomes the second to last, and so on.
  *  - The reverse() method is useful when you need to reverse the order of elements in an array.
- * 
+ *
  *  - The reverse() method is an in-place algorithm, meaning it changes the original array and does not create a new array.
- *  
+ *
  *  - The reverse() method modifies the original array and returns the reversed array.
- * 
+ *
  *  - The reverse() method is faster since it does not create a new array and does not require additional memory.
  *
  *  - Return Value :
@@ -615,21 +621,20 @@
 // console.log(reversedArr); // Output: [5, 4, 3, 2, 1]
 // console.log(arr); // Output: [5, 4, 3, 2, 1] (original array is modified)
 
-
 /********************************************************************************
  *
  *  ! toReversed() Method :
  *  - The toReversed() method is a new method introduced in ECMAScript 2023 (ES23) that reverses the elements of an array without modifying the original array.
  *  - It is an accessor method.
- * 
+ *
  *  - It returns a new array with the elements reversed.
- * 
- *  - The toReversed() method is similar to the reverse() method, but it does not modify the original array. 
+ *
+ *  - The toReversed() method is similar to the reverse() method, but it does not modify the original array.
  *  - It returns a new array with the elements reversed.
  *  - The toReversed() method is useful when you need to reverse the order of elements in an array without changing the original array.
- * 
+ *
  *  - The toReversed() method is an out-of-place algorithm, meaning it does not change the original array and creates a new array.
- * 
+ *
  *  - The toReversed() method creates copies of the original array and reverses the order of elements in the new array, making it slightly slower than the reverse() method but safer.
  *
  *  - Return Value :
@@ -643,28 +648,27 @@
 // console.log(reversedArr); // Output: [5, 4, 3, 2, 1]
 // console.log(arr); // Output: [1, 2, 3, 4, 5] (original array remains unchanged)
 
-
 /********************************************************************************
  *
  *  ! fill() Method :
  *  - The fill() method in JavaScript is used to fill all the elements of an array from a start index to an end index with a static value.
  *  - It is a mutator method.
- * 
+ *
  *  - The fill() method modifies the original array and returns the modified array.
- * 
+ *
  *  - The fill() method is useful when you need to fill an array with a specific value.
  *  - The fill() method is an in-place algorithm, meaning it changes the original array and does not create a new array.
  *  - The fill() method is faster since it does not create a new array and does not require additional memory.
  *  - The fill() method is useful when you need to initialize an array with a specific value or reset the values of an array.
- * 
+ *
  *  - If you don't specify the value to fill the array with, the fill() method fills the array with undefined.
  *  - If you don't specify the start and end indices, the fill() method fills the entire array with the specified value.
- * 
+ *
  *  - Syntax : array.fill(value, start, end)
  *               ==> value : The value to fill the array with.
  *               ==> start (optional) : The index at which to start filling the array (default is 0).
  *              ==> end (optional) : The index at which to stop filling the array (default is array.length). The end index is not included.
- * 
+ *
  *  - If the start index is greater than the end index, the array is not modified.
  *  - If the start index is equal to the end index, the array is not modified.
  *  - If the start index is negative, it is treated as array.length + start.
@@ -674,17 +678,17 @@
  *  - If the start index is negative or greater than the array length, the array is not modified.
  *  - If the end index is negative or greater than the array length, the array is not modified.
  *  - If the end index is less than the start index, the array is not modified.
- * 
+ *
  *  - The fill() method fills the array with references to the same object. This means that all elements in the array point to the same object in memory.
- * 
- *  - Use Cases : 
+ *
+ *  - Use Cases :
  *          ==> Initialize an array with a specific value.
  *          ==> Reset the values of an array.
  *          ==> Fill a portion of an array with a specific value.
- *  
+ *
  *  - Return Value :
  *          ==> The modified array with the elements filled with the specified value.
- * 
+ *
  *
  *******************************************************************************/
 

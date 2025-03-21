@@ -3,7 +3,10 @@
  *  - In JavaScript, higher-order functions are functions that either :
  *              i) Take other functions as arguments or
  *              ii) Return a function as their result.
+ * 
  *  - Higher order functions is a cornerstone of functional programming, enabling powerful abstractions, code reusability, and composability.
+ *  - Higher-order functions are functions that operate on other functions, either by taking them as arguments or by returning them.
+ * 
  *  - Key Characteristics :
  *              1) Functions as First-Class Citizen :
  *                      ==> In JavaScript, functions are treated as first-class citizens, meaning :

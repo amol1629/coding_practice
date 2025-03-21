@@ -3,7 +3,17 @@
  *
  *  - The delete operator is used to "remove a property from an object"
  *  - The delete operator can not delete "variables declared using var, let, or const".
+ * 
+ * 	- When used with arrays, delete will delete the specified index, but the array length will not be affected.
+ * 	- When used with arrays, if you delete a property, the array length will not be affected.
+ * 	
+ *	- The delete operator is designed to remove properties from JavaScript objects.
+ *	- It does not have any effect on variables or functions.
  *
+ *  - Variables declared with var, let, or const cannot be deleted using the delete operator.
+ * 
+ * 	- Syntax : delete objectName.propertyName
+ * 
  *  - Return value of delete :
  *          - The delete operator returns a boolean :
  *                  1) true : If the property is successfully delete.
