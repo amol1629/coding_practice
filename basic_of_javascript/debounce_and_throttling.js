@@ -106,7 +106,7 @@ const clickMeButton = document.getElementById("click-me-button");
 // 	console.log("Throttled Event", new Date().toLocaleTimeString());
 // clickMeButton.addEventListener("click", throttle(log, 500));
 
-// Implementation of Throttling  Using timestamps
+// // Implementation of Throttling  Using timestamps
 // function throttle(func, interval) {
 // 	let lastExecutionTime = 0;
 

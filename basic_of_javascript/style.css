@@ -18,6 +18,10 @@
 	background: rgb(255, 251, 251);
 }
 
+#main-event-bubbling-box {
+	margin: 0px 0px 80px 0px;
+}
+
 #input-box {
 	border-radius: 30px;
 	-webkit-border-radius: 30px;
@@ -25,7 +29,6 @@
 	-ms-border-radius: 30px;
 	-o-border-radius: 30px;
 	padding: 10px;
-	margin-top: 20px;
 }
 
 h1 {
@@ -84,4 +87,94 @@ h1 {
 
 #todo-list li:hover {
 	color: green;
+}
+
+/* Debounce and throttling styles */
+
+.main-debounce-box {
+	margin: 0px 0px 80px 0px;
+}
+
+.debounce-throttle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	place-content: center;
+	background-color: rgb(255, 251, 251);
+	border: 2px solid rgb(240, 227, 227);
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
+	padding: 20px;
+	gap: 40px;
+	width: 50%;
+	margin: auto;
+}
+
+#input-text-value {
+	color: gray;
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Tic Tac Toe Game Style */
+.main-tic-tac-tox-box {
+	margin: 80px 0px 80px 0px;
+
+	background-color: rgb(255, 248, 249);
+	border: 2px solid rgb(240, 227, 227);
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
+	padding: 20px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	place-content: center;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	border: 1px solid rgb(220, 0, 161);
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+
+	text-transform: uppercase;
+
+	font-size: 30px;
+	font-weight: bold;
+	color: rgb(201, 47, 201);
+	background-color: rgb(255, 230, 255);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	place-content: center;
+
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.box:hover{
+	background-color: rgb(255, 200, 255);
+	transform: scale(1.1);
+	box-shadow: 0px 0px 10px rgb(255, 200, 255);
+
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+
+	
 }

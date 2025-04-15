@@ -28,18 +28,43 @@
 // two.print();
 
 
-functionDeclaration();
-functionExpression();
-arrowFunction();
 
-function functionDeclaration() {
-	console.log("Function Declaration");
-}
 
-const functionExpression = function () {
-    console.log("Function Expression");
+const input = document.querySelector("#input-box");
+const inputTextValue = document.querySelector("#input-text-value");
+
+const logInput = (e) => {
+	const value = e.target.value;
+    console.log("Input text", value);
+    inputTextValue.innerHTML = value;
 };
 
-const arrowFunction = () => {
-    console.log("Arrow Function");
+const debounce = (func, delay) => {
+	let timeoutId;
+	return function (...args) {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => {
+			func(...args);
+		}, delay);
+	};
+};
+
+const throttle = (func, delay) => {
+    let lastTime = 0;
+    return function (...args) {
+        const now = new Date().getTime();
+        if (now - lastTime >= delay) {
+            lastTime = now;
+            func(...args);
+        }
+    };
 }
+
+// const throttled = throttle(logInput, 1000);
+// input.addEventListener("input", throttled);
+
+const debounced = debounce(logInput, 1000);
+
+input.addEventListener("input", debounced);
+
+

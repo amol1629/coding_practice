@@ -1,37 +1,67 @@
 /**
- * **Reverse a string in JavaScript without using built-in functions.**
- * **Write a function to check if a string is a palindrome.**
- * **Implement a function to flatten a nested array.**
- * **Write a debounce function from scratch.**
- * **Write a function to find the first non-repeating character in a string.**
- * **Implement a function to merge two sorted arrays.**
- * **Write a function to check if two objects are deeply equal.**
- * **Create a simple promise-based delay function.**
- * **Implement a simple event emitter.**
- * **Explain and write code for memoization in JavaScript.**
- * **Write a function to find the maximum sum of a subarray using Kadane’s algorithm.**
- * **Implement a function to check if a number is prime.**
- * **Create a function that removes duplicates from an array.**
- * **Write a function to find the intersection of two arrays.**
- * **Implement a function to generate all permutations of a string.**
- * **Write a function to convert a string to title case.**
- * **Create a function to shuffle an array.**
- * **Write a function to find the longest common prefix in an array of strings.**
- * **Implement a function to group anagrams together.**
- * **Write a function that returns the nth Fibonacci number using dynamic programming.**
- * **Write a function to rotate an array by k steps to the right.**
- * **Implement a function to find the missing number in an array of size n with numbers from 1 to n.**
- * **Write a function to count the number of vowels in a string.**
- * **Create a function to check if a given string is an anagram of another.**
- * **Implement a function to find the longest palindrome substring in a string.**
- * **Write a function to implement binary search on a sorted array.**
- * **Create a function to find the maximum product of two integers in an array.**
- * **Implement a function to validate if a string has balanced parentheses.**
- * **Write a function to perform a deep clone of an object.**
- * **Implement a function to compute the power of a number using recursion.**
+ * 	
+ * * 1)	Reverse a string in JavaScript without using built-in functions.**
+ * 	
+ * * 2)	Write a function to check if a string is a palindrome.**
+ * 	
+ * * 3)	Implement a function to flatten a nested array.**
+ * 	
+ * * 4)	Write a debounce function from scratch.**
+ * 	
+ * * 5)	Write a function to find the first non-repeating character in a string.**
+ * 	
+ * * 6)	Implement a function to merge two sorted arrays.**
+ * 	
+ * * 7)	Write a function to check if two objects are deeply equal.**
+ * 	
+ * * 8)	Create a simple promise-based delay function.**
+ * 	
+ * * 9)	Implement a simple event emitter.**
+ * 	
+ * * 10)	Explain and write code for memoization in JavaScript.**
+ * 	
+ * * 11)	Write a function to find the maximum sum of a subarray using Kadane’s algorithm.**
+ * 	
+ * * 12)	Implement a function to check if a number is prime.**
+ * 	
+ * * 13)	Create a function that removes duplicates from an array.**
+ * 	
+ * * 14)	Write a function to find the intersection of two arrays.**
+ * 	
+ * * 15)	Implement a function to generate all permutations of a string.**
+ * 	
+ * * 16)	Write a function to convert a string to title case.**
+ * 	
+ * * 17)	Create a function to shuffle an array.**
+ * 	
+ * * 18)	Write a function to find the longest common prefix in an array of strings.**
+ * 	
+ * * 19)	Implement a function to group anagrams together.**
+ * 	
+ * * 20)	Write a function that returns the nth Fibonacci number using dynamic programming.**
+ * 	
+ * * 21)	Write a function to rotate an array by k steps to the right.**
+ * 	
+ * * 22)	Implement a function to find the missing number in an array of size n with numbers from 1 to n.**
+ * 	
+ * * 23)	Write a function to count the number of vowels in a string.**
+ * 	
+ * * 24)	Create a function to check if a given string is an anagram of another.**
+ * 	
+ * * 25)	Implement a function to find the longest palindrome substring in a string.**
+ * 	
+ * * 26)	Write a function to implement binary search on a sorted array.**
+ * 	
+ * * 27)	Create a function to find the maximum product of two integers in an array.**
+ * 	
+ * * 28)	Implement a function to validate if a string has balanced parentheses.**
+ * 	
+ * * 29)	Write a function to perform a deep clone of an object.**
+ * 	
+ * * 30)	Implement a function to compute the power of a number using recursion.**
  */
 
-// Q.1. Reverse a string in JavaScript without using built-in functions.
+// 	! Q.1. Reverse a string in JavaScript without using built-in functions.
 
 // Solution 1 : Reversing each character of the string
 
@@ -75,7 +105,7 @@
 
 // ------------------------------------------------
 
-// Q. Difference between "map()" and "forEach()"
+// ! Q. Difference between "map()" and "forEach()"
 // const numbers = [2, 4, 5, 6, 10];
 
 // numbers.forEach((num) => {
@@ -91,7 +121,7 @@
 // ------------------------------------------------
 
 /**
- *  Q. Type Coercion Questions :
+ *  ! Q. Type Coercion Questions :
  */
 // console.log(![] + []);
 // console.log(typeof (![] + []));
@@ -102,7 +132,7 @@
 // ------------------------------------------------
 
 /**
- * Q. Object of Object in JavaScript :
+ * 	! Q. Object of Object in JavaScript :
  *
  *  - Objects used as keys in JavaScript objects are converted to strings.
  *  - By default, the string representation of a plain object is "[object Object]".
@@ -124,7 +154,7 @@
 // ------------------------------------------------
 
 /**
- * Q. Fibonacci Series :
+ * ! Q. Fibonacci Series :
  */
 
 // function fibonacciIterative(n) {
@@ -145,7 +175,7 @@
 // ------------------------------------------------
 
 /**
- * Q. Find duplicate elements from array :
+ * !. Find duplicate elements from array :
  */
 
 // const numbers = [1, 2, 3, 4, 5, 2, 4];
@@ -166,7 +196,7 @@
 // ------------------------------------------------
 
 /**
- *  Q. Infinite Currying :
+ *  ! Q. Infinite Currying :
  */
 
 // const infiniteCurrying = (sum = 0) => {
@@ -181,7 +211,7 @@
 // console.log(infiniteCurrying(4)(40)());
 
 /**
- * * Composition in JavaScript :
+ * ! Composition in JavaScript :
  */
 // const compose =
 // 	(...functions) =>
@@ -191,47 +221,57 @@
 // 			args
 // 		);
 
-// // This is the understandable version of above compose function.
+// This is the understandable version of above compose function.
 // const compose1 = (...functions) => {
 // 	return (...args) => {
 // 		return functions.reduceRight((acc, fn) => {
-// 			// If acc is an array, spread it; otherwise, pass it directly
+			// If acc is an array, spread it; otherwise, pass it directly
 // 			return Array.isArray(acc) ? fn(...acc) : fn(acc);
 // 		}, args);
 // 	};
 // };
 
-// // Example functions
+ // Example functions
 // const add = (x, y) => x + y; // Takes two arguments
 // const multiply = (x) => x * 2; // Takes one argument
 // const square = (x) => x * x; // Takes one argument
 
-// // Composing functions
+// Composing functions
 // const result = compose1(square, multiply, add)(5, 3);
-// // Execution flow:
-// // 1. add(5, 3) => 8
-// // 2. multiply(8) => 16
-// // 3. square(16) => 256
+// Execution flow:
+// 1. add(5, 3) => 8
+// 2. multiply(8) => 16
+// 3. square(16) => 256
 
 // console.log(result); // Output: 256
+// --------------------------------------------------------------------
 
-// console.log(Number.isInteger('a'))
 
-function* generatorFunction() {
-	let num = 1;
 
-	while (true) {
-		yield num;
-		num++;
-	}
-}
+// --------------------------------------------------------------------
+/**
+ *  ! Q. Merge Two String Alternatively :
+ */
 
-const generator = generatorFunction();
+// let str1 = "Hello";
+// let str2 = "JaaScript";
 
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
+// const mergeTwoStrings = (str1, str2) => {
+// 	let result = "";
+
+// 	let len1 = str1.length;
+// 	let len2 = str2.length;
+
+// 	let maxLength = Math.max(len1, len2);
+
+// 	for (let i = 0; i < maxLength; i++) {
+// 		if (i < len1) result += str1[i];
+// 		if (i < len2) result += str2[i];
+// 	}
+
+// 	return result;
+// };
+
+// console.log(mergeTwoStrings(str1, str2));
+
+// --------------------------------------------------------------------

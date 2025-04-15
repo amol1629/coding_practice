@@ -22,7 +22,6 @@
 // Event delegation example :
 
 const eventDelegationListParentDiv = document.getElementById("todo-list");
-
 eventDelegationListParentDiv.addEventListener("click", (e) => {
 	if (e.target.tagName === "LI") {
 		return console.log("Clicked : ", e.target.textContent);
