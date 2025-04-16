@@ -19,7 +19,7 @@ let currentPlayer = "X";
 const winner = (arr) => {
 	for (let i = 0; i < winningPossibilities.length; i++) {
 		const [a, b, c] = winningPossibilities[i];
-		
+
 		if (arr[a] && arr[a] === arr[b] && arr[a] === arr[c]) return arr[a];
 	}
 
@@ -44,15 +44,20 @@ function handleBoxClick(el) {
 
 		setTimeout(() => {
 			alert(`Winner is : ${winnerPlayer}`);
+			// Reset all the values after winning game
+			arr.fill(null);
+
+			// Reload the page
+			location.reload();
 		}, 100); // delay to allow UI update
 	} else if (arr.every((item) => item !== null)) {
-		// Draw: fill all boxes with 'D' or keep existing values
-		document.querySelectorAll(".cell").forEach((cell) => {
-			cell.innerHTML = "D";
-		});
+		
 
 		setTimeout(() => {
 			alert("Draw");
+			
+			// Reload the page
+			location.reload();
 		}, 100);
 	} else {
 		currentPlayer = currentPlayer === "X" ? "O" : "X";

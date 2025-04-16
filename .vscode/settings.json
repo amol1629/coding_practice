@@ -62,5 +62,6 @@
 	"cSpell.words": ["stringifying", "writability"],
 	"terminal.integrated.fontLigatures.enabled": true,
 	"apc.menubar.compact": true,
-	"editor.inlayHints.fontFamily": "'Merienda Medium', cursive"
+	"editor.inlayHints.fontFamily": "'Merienda Medium', cursive",
+	"errorLens.fontFamily": "'Merienda Medium', cursive"
 }

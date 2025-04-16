@@ -8,7 +8,6 @@
  *                  2) Target phase : The event reached the target element.
  *                  3) Bubble phase (   Default phase ) : The event bubbles up from the target element back to the root. (value : false and it is default phase)
  *
- *
  */
 
 /**
@@ -26,6 +25,5 @@ eventDelegationListParentDiv.addEventListener("click", (e) => {
 	if (e.target.tagName === "LI") {
 		return console.log("Clicked : ", e.target.textContent);
 	}
-
 	return console.log("This is not list item");
 });
