@@ -2,24 +2,24 @@
 
 ## Table of Contents
 
-* [Introduction](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#introduction)
-* [Project Structure](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#project-structure)
-* [Component Patterns](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#component-patterns)
-* [Naming Conventions](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#naming-conventions)
-* [State Management](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#state-management)
-* [Hooks Usage](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#hooks-usage)
-* [Performance Optimization](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#performance-optimization)
-* [Code Reusability](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#code-reusability)
-* [Testing](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#testing)
-* [Styling](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#styling)
-* [Accessibility](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#accessibility)
-* [TypeScript Integration](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#typescript-integration)
-* [Error Handling](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#error-handling)
-* [Security Best Practices](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#security-best-practices)
-* [Documentation](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#documentation)
-* [Conclusion](https://claude.ai/chat/0e851027-5587-4b90-b197-ef0966d4d6c5#conclusion)
+* [Introduction](#introduction)
+* [Project Structure](#project-structure)
+* [Component Patterns](#component-patterns)
+* [Naming Conventions](#naming-conventions)
+* [State Management](#state-management)
+* [Hooks Usage](#hooks-usage)
+* [Performance Optimization](#performance-optimization)
+* [Code Reusability](#code-reusability)
+* [Testing](#testing)
+* [Styling](#styling)
+* [Accessibility](#accessibility)
+* [TypeScript Integration](#typescript-integration)
+* [Error Handling](#error-handling)
+* [Security Best Practices](#security-best-practices)
+* [Documentation](#documentation)
+* [Conclusion](h#conclusion)
 
-## Introduction
+## [Introduction](#introduction)
 
 This guide outlines industry-standard best practices for React development. Following these guidelines will help you write clean, maintainable, and efficient React code. These practices reflect current industry standards as of 2024 and are applicable to React 18+ projects.
 
@@ -441,7 +441,7 @@ function useLocalStorage(key, initialValue) {
    }
    ```
 
-## Code Reusability
+## [Code Reusability](#code-reusability)
 
 ### Component Composition
 
@@ -1096,7 +1096,6 @@ function App() {
 | -------- | ------- | -------- | ---------------------------- |
 | userId   | string  | Required | ID of the user to display    |
 | editable | boolean | false    | Whether fields can be edited |
-
 
 ---
 
