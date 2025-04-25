@@ -1,5 +1,5 @@
 import './App.css'
-import UseEffect from './hooks/useeffect/UseEffect'
+import Todo from './projects/todo/Todo'
 
 function App() {
 	return (
@@ -9,7 +9,10 @@ function App() {
 			</div>
 
 			<div className="App">
-				<UseEffect />
+				{/* <UseCallback /> */}
+				{/* <UseEffect /> */}
+
+				<Todo />
 			</div>
 		</div>
 	)
