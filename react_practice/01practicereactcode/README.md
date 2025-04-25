@@ -2,15 +2,15 @@
 
 ## Table of Contents
 
-* [Introduction](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#introduction)
-* [Project Structure](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#project-structure)
-* [Component Patterns](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#component-patterns)
-* [Naming Conventions](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#naming-conventions)
-* [State Management](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#state-management)
-* [Hooks Usage](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#hooks-usage)
-* [Performance Optimization](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#performance-optimization)
-* [Code Reusability](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#code-reusability)
-* [Documentation](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#documentation)
+* [Introduction](#introduction)
+* [Project Structure](#project-structure)
+* [Component Patterns](#component-patterns)
+* [Naming Conventions](#naming-conventions)
+* [State Management](#state-management)
+* [Hooks Usage](#hooks-usage)
+* [Performance Optimization](#performance-optimization)
+* [Code Reusability](#code-reusability)
+* [Documentation](#documentation)
 
 ## Introduction
 
@@ -348,7 +348,7 @@ function useLocalStorage(key, initialValue) {
 }
 ```
 
-## Performance Optimization
+## [Performance Optimization](#performance-optimization)
 
 ### Component Optimization
 
