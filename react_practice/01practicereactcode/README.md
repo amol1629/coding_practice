@@ -2,24 +2,17 @@
 
 ## Table of Contents
 
-* [Introduction](#introduction)
-* [Project Structure](#project-structure)
-* [Component Patterns](#component-patterns)
-* [Naming Conventions](#naming-conventions)
-* [State Management](#state-management)
-* [Hooks Usage](#hooks-usage)
-* [Performance Optimization](#performance-optimization)
-* [Code Reusability](#code-reusability)
-* [Testing](#testing)
-* [Styling](#styling)
-* [Accessibility](#accessibility)
-* [TypeScript Integration](#typescript-integration)
-* [Error Handling](#error-handling)
-* [Security Best Practices](#security-best-practices)
-* [Documentation](#documentation)
-* [Conclusion](h#conclusion)
+* [Introduction](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#introduction)
+* [Project Structure](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#project-structure)
+* [Component Patterns](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#component-patterns)
+* [Naming Conventions](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#naming-conventions)
+* [State Management](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#state-management)
+* [Hooks Usage](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#hooks-usage)
+* [Performance Optimization](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#performance-optimization)
+* [Code Reusability](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#code-reusability)
+* [Documentation](https://claude.ai/chat/05b2ac59-0bef-438d-a9ee-fb3f3f6c4df9#documentation)
 
-## [Introduction](#introduction)
+## Introduction
 
 This guide outlines industry-standard best practices for React development. Following these guidelines will help you write clean, maintainable, and efficient React code. These practices reflect current industry standards as of 2024 and are applicable to React 18+ projects.
 
@@ -365,109 +358,50 @@ function useLocalStorage(key, initialValue) {
    ```
 2. **useMemo** for expensive calculations
    ```jsx
-   const sortedList = useMemo(() => {
-     return [...list].sort(/* expensive sort */);
-   }, [list]);
+   const sortedList = useMemo(() => {  return [...list].sort(/* expensive sort */);}, [list]);
    ```
 3. **useCallback** for stable functions
    ```jsx
-   const handleClick = useCallback(() => {
-     // Handle click
-   }, [dependency]);
+   const handleClick = useCallback(() => {  // Handle click}, [dependency]);
    ```
 4. **Code splitting** with lazy loading
    ```jsx
-   const LazyComponent = React.lazy(() => import('./LazyComponent'));
-
-   function MyComponent() {
-     return (
-       <Suspense fallback={<Spinner />}>
-         <LazyComponent />
-       </Suspense>
-     );
-   }
+   const LazyComponent = React.lazy(() => import('./LazyComponent'));function MyComponent() {  return (    <Suspense fallback={<Spinner />}>      <LazyComponent />    </Suspense>  );}
    ```
 
 ### List Rendering
 
 1. **Virtualization** for long lists
    ```jsx
-   import { FixedSizeList } from 'react-window';
-
-   function VirtualizedList({ items }) {
-     const Row = ({ index, style }) => (
-       <div style={style}>{items[index]}</div>
-     );
-
-     return (
-       <FixedSizeList
-         height={500}
-         width="100%"
-         itemCount={items.length}
-         itemSize={35}
-       >
-         {Row}
-       </FixedSizeList>
-     );
-   }
+   import { FixedSizeList } from 'react-window';function VirtualizedList({ items }) {  const Row = ({ index, style }) => (    <div style={style}>{items[index]}</div>  );  return (    <FixedSizeList      height={500}      width="100%"      itemCount={items.length}      itemSize={35}    >      {Row}    </FixedSizeList>  );}
    ```
 2. **Stable keys** for list items
    ```jsx
-   // ✅ Good: Unique, stable ID
-   items.map(item => <Item key={item.id} {...item} />)
-
-   // ❌ Bad: Using index as key when list can reorder
-   items.map((item, index) => <Item key={index} {...item} />)
+   // ✅ Good: Unique, stable IDitems.map(item => <Item key={item.id} {...item} />)// ❌ Bad: Using index as key when list can reorderitems.map((item, index) => <Item key={index} {...item} />)
    ```
 
 ### Data Fetching
 
 1. **Caching** and state management
    ```jsx
-   // Using React Query
-   const { data, isLoading } = useQuery(['users', userId], fetchUserData);
+   // Using React Queryconst { data, isLoading } = useQuery(['users', userId], fetchUserData);
    ```
 2. **Debouncing** for input fields
    ```jsx
-   function SearchInput() {
-     const [value, setValue] = useState('');
-     const debouncedValue = useDebounce(value, 500);
-
-     useEffect(() => {
-       if (debouncedValue) searchApi(debouncedValue);
-     }, [debouncedValue]);
-
-     return <input value={value} onChange={e => setValue(e.target.value)} />;
-   }
+   function SearchInput() {  const [value, setValue] = useState('');  const debouncedValue = useDebounce(value, 500);  useEffect(() => {    if (debouncedValue) searchApi(debouncedValue);  }, [debouncedValue]);  return <input value={value} onChange={e => setValue(e.target.value)} />;}
    ```
 
-## [Code Reusability](#code-reusability)
+## Code Reusability
 
 ### Component Composition
 
 1. **Children prop** for flexible components
    ```jsx
-   function Card({ title, children }) {
-     return (
-       <div className="card">
-         <h2>{title}</h2>
-         <div className="card-content">{children}</div>
-       </div>
-     );
-   }
+   function Card({ title, children }) {  return (    <div className="card">      <h2>{title}</h2>      <div className="card-content">{children}</div>    </div>  );}
    ```
 2. **Render props** for sharing functionality
    ```jsx
-   function MouseTracker({ render }) {
-     const [position, setPosition] = useState({ x: 0, y: 0 });
-
-     // Update position...
-
-     return render(position);
-   }
-
-   // Usage
-   <MouseTracker render={pos => <div>Mouse at: {pos.x}, {pos.y}</div>} />
+   function MouseTracker({ render }) {  const [position, setPosition] = useState({ x: 0, y: 0 });  // Update position...  return render(position);}// Usage<MouseTracker render={pos => <div>Mouse at: {pos.x}, {pos.y}</div>} />
    ```
 
 ### Custom Hooks
@@ -548,488 +482,6 @@ export function isValidEmail(email) {
 }
 ```
 
-## Testing
-
-### Component Testing
-
-```jsx
-// Button.test.jsx
-import { render, screen, fireEvent } from '@testing-library/react';
-import Button from './Button';
-
-describe('Button', () => {
-  test('renders with correct text', () => {
-    render(<Button>Click me</Button>);
-    expect(screen.getByText('Click me')).toBeInTheDocument();
-  });
-
-  test('calls onClick handler when clicked', () => {
-    const handleClick = jest.fn();
-    render(<Button onClick={handleClick}>Click me</Button>);
-    fireEvent.click(screen.getByText('Click me'));
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
-
-  test('is disabled when disabled prop is true', () => {
-    render(<Button disabled>Click me</Button>);
-    expect(screen.getByText('Click me')).toBeDisabled();
-  });
-});
-```
-
-### Hook Testing
-
-```jsx
-// useCounter.test.js
-import { renderHook, act } from '@testing-library/react-hooks';
-import useCounter from './useCounter';
-
-describe('useCounter', () => {
-  test('initial value is set correctly', () => {
-    const { result } = renderHook(() => useCounter(5));
-    expect(result.current.count).toBe(5);
-  });
-
-  test('increment increases count by 1', () => {
-    const { result } = renderHook(() => useCounter(0));
-    act(() => {
-      result.current.increment();
-    });
-    expect(result.current.count).toBe(1);
-  });
-});
-```
-
-### Testing Best Practices
-
-1. Test behavior, not implementation
-2. Use data-testid attributes when necessary
-3. Write meaningful assertions
-4. Test edge cases and error conditions
-5. Use snapshot testing sparingly
-6. Mock external dependencies
-
-## Styling
-
-### CSS-in-JS
-
-```jsx
-// Using styled-components
-import styled from 'styled-components';
-
-const Button = styled.button`
-  background-color: ${props => props.primary ? 'blue' : 'white'};
-  color: ${props => props.primary ? 'white' : 'blue'};
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: 1px solid blue;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-// Usage
-<Button primary>Primary Button</Button>
-<Button>Secondary Button</Button>
-```
-
-### CSS Modules
-
-```jsx
-// Button.module.css
-.button {
-  padding: 8px 16px;
-  border-radius: 4px;
-}
-
-.primary {
-  background-color: blue;
-  color: white;
-}
-
-// Button.jsx
-import styles from './Button.module.css';
-
-function Button({ primary, children }) {
-  return (
-    <button className={`${styles.button} ${primary ? styles.primary : ''}`}>
-      {children}
-    </button>
-  );
-}
-```
-
-### Utility-First CSS (Tailwind)
-
-```jsx
-function Button({ primary, children }) {
-  return (
-    <button className={`px-4 py-2 rounded ${
-      primary ? 'bg-blue-500 text-white' : 'bg-white text-blue-500 border border-blue-500'
-    }`}>
-      {children}
-    </button>
-  );
-}
-```
-
-### Styling Best Practices
-
-1. Consider component-scoped styling (CSS Modules, CSS-in-JS)
-2. Create a design system with consistent variables
-3. Use responsive design principles
-4. Consider accessibility in your styling
-5. Avoid inline styles except for dynamic values
-
-## Accessibility
-
-### Basic Principles
-
-1. Semantic HTML elements
-   ```jsx
-   // ✅ Good
-   <button onClick={handleClick}>Click me</button>
-
-   // ❌ Bad
-   <div onClick={handleClick} role="button">Click me</div>
-   ```
-2. Proper labels and ARIA attributes
-   ```jsx
-   <label htmlFor="name">Name</label>
-   <input
-     id="name"
-     aria-describedby="name-error"
-     aria-invalid={hasError}
-   />
-   {hasError && <span id="name-error">Please enter a valid name</span>}
-   ```
-3. Keyboard navigation
-   ```jsx
-   function AccessibleButton({ onClick, children }) {
-     const handleKeyDown = (e) => {
-       if (e.key === 'Enter' || e.key === ' ') {
-         onClick();
-       }
-     };
-
-     return (
-       <div
-         role="button"
-         tabIndex={0}
-         onClick={onClick}
-         onKeyDown={handleKeyDown}
-       >
-         {children}
-       </div>
-     );
-   }
-   ```
-4. Focus management
-   ```jsx
-   function Modal({ isOpen, onClose, children }) {
-     const modalRef = useRef(null);
-
-     useEffect(() => {
-       if (isOpen) {
-         modalRef.current?.focus();
-       }
-     }, [isOpen]);
-
-     return isOpen ? (
-       <div
-         ref={modalRef}
-         role="dialog"
-         aria-modal="true"
-         tabIndex={-1}
-       >
-         {children}
-         <button onClick={onClose}>Close</button>
-       </div>
-     ) : null;
-   }
-   ```
-
-### Accessibility Checklist
-
-1. Use semantic HTML elements
-2. Provide text alternatives for non-text content
-3. Ensure color is not the only means of conveying information
-4. Maintain sufficient color contrast
-5. Make all functionality available from a keyboard
-6. Help users navigate and find content
-7. Make text readable and understandable
-8. Make content appear and operate in predictable ways
-9. Test with screen readers
-
-## TypeScript Integration
-
-### Basic Component Types
-
-```tsx
-// Button.tsx
-interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  size?: 'small' | 'medium' | 'large';
-  onClick?: () => void;
-  disabled?: boolean;
-  children: React.ReactNode;
-}
-
-const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'medium',
-  onClick,
-  disabled = false,
-  children
-}) => {
-  return (
-    <button
-      className={`button button--${variant} button--${size}`}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {children}
-    </button>
-  );
-};
-
-export default Button;
-```
-
-### Hooks with TypeScript
-
-```tsx
-// useLocalStorage.ts
-function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] {
-  const [storedValue, setStoredValue] = useState<T>(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      console.error(error);
-      return initialValue;
-    }
-  });
-
-  const setValue = (value: T | ((val: T) => T)) => {
-    try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  return [storedValue, setValue];
-}
-```
-
-### Type Definitions
-
-```tsx
-// types/user.ts
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: 'admin' | 'user' | 'guest';
-  preferences?: UserPreferences;
-}
-
-export interface UserPreferences {
-  theme: 'light' | 'dark';
-  notifications: boolean;
-}
-
-// Using the types
-function UserProfile({ user }: { user: User }) {
-  return (
-    <div>
-      <h1>{user.name}</h1>
-      <p>{user.email}</p>
-    </div>
-  );
-}
-```
-
-### TypeScript Best Practices
-
-1. Define explicit return types for non-trivial functions
-2. Use type inference for simple functions
-3. Prefer interfaces for public APIs, types for complex types
-4. Use generics for reusable components and hooks
-5. Create a `types` folder for shared type definitions
-6. Use discriminated unions for state management
-7. Avoid `any` type - use `unknown` if necessary
-
-## Error Handling
-
-### Error Boundaries
-
-```jsx
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-
-  static getDerivedStateFromError(error) {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    console.error("Error caught by boundary:", error, errorInfo);
-    // Log to error reporting service
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback || <h2>Something went wrong.</h2>;
-    }
-
-    return this.props.children;
-  }
-}
-
-// Usage
-<ErrorBoundary fallback={<ErrorPage />}>
-  <MyComponent />
-</ErrorBoundary>
-```
-
-### API Error Handling
-
-```jsx
-function ProductPage({ productId }) {
-  const [product, setProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchProduct() {
-      try {
-        setIsLoading(true);
-        setError(null);
-        const data = await fetchProductById(productId);
-        setProduct(data);
-      } catch (err) {
-        setError(err.message || 'Failed to fetch product');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchProduct();
-  }, [productId]);
-
-  if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message={error} />;
-  if (!product) return <NotFound />;
-
-  return <ProductDetails product={product} />;
-}
-```
-
-### Form Validation
-
-```jsx
-function SignupForm() {
-  const [form, setForm] = useState({ email: '', password: '' });
-  const [errors, setErrors] = useState({});
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (!form.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-
-    if (!form.password) {
-      newErrors.password = 'Password is required';
-    } else if (form.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Submit form
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          value={form.email}
-          onChange={(e) => setForm({...form, email: e.target.value})}
-        />
-        {errors.email && <p className="error">{errors.email}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          value={form.password}
-          onChange={(e) => setForm({...form, password: e.target.value})}
-        />
-        {errors.password && <p className="error">{errors.password}</p>}
-      </div>
-
-      <button type="submit">Sign Up</button>
-    </form>
-  );
-}
-```
-
-## Security Best Practices
-
-1. **Prevent XSS** by avoiding `dangerouslySetInnerHTML`
-   ```jsx
-   // ❌ Bad: Vulnerable to XSS
-   <div dangerouslySetInnerHTML={{ __html: userProvidedContent }} />
-
-   // ✅ Good: Use libraries for sanitization
-   import DOMPurify from 'dompurify';
-   <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(userProvidedContent) }} />
-   ```
-2. **Secure forms and inputs**
-   ```jsx
-   // Validate and sanitize user input
-   const sanitizedInput = DOMPurify.sanitize(userInput.trim());
-   ```
-3. **Use HTTPS for all requests**
-   ```jsx
-   // .env file
-   REACT_APP_API_URL=https://api.example.com
-   ```
-4. **Implement proper authentication**
-   ```jsx
-   // Secure token storage in httpOnly cookies
-   // Use CSRF protection
-   // Implement proper logout
-   ```
-5. **Avoid exposing sensitive information**
-   ```jsx
-   // ❌ Don't expose API keys in client-side code
-   const API_KEY = 'secret_key'; // Dangerous!
-
-   // ✅ Use environment variables and backend proxies
-   const apiUrl = process.env.REACT_APP_API_URL;
-   ```
-
 ## Documentation
 
 ### Component Documentation
@@ -1097,6 +549,6 @@ function App() {
 | userId   | string  | Required | ID of the user to display    |
 | editable | boolean | false    | Whether fields can be edited |
 
----
+```
 
----
+```
