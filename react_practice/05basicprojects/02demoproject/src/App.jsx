@@ -1,3 +1,5 @@
+import TodoList from './components/todos/TodoList'
+
 export default function App() {
 	return (
 		<>
@@ -10,7 +12,9 @@ export default function App() {
 			<div className="App flex justify-center items-center h-[90vh] text-center bg-pink-50">
 				{/* This UseMemo component has two different components in it. One is WithUseMemo and other is WithoutUseMemo which gives you clear idea of how use memo works. */}
 				{/* <UseMemo /> */}
+
+				<TodoList />
 			</div>
 		</>
-	);
+	)
 }

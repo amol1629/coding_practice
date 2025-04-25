@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useState } from 'react'
 // import "./styles.css";
 
 const daysOfWeek = [
-	"Monday",
-	"Tuesday",
-	"Wednesday",
-	"Thursday",
-	"Friday",
-	"Saturday",
-	"Sunday",
-];
+	'Monday',
+	'Tuesday',
+	'Wednesday',
+	'Thursday',
+	'Friday',
+	'Saturday',
+	'Sunday',
+]
 
 export default function App() {
-	const [schedules, setSchedules] = useState([]);
+	const [schedules, setSchedules] = useState([])
 
 	// Function to add a new schedule
 	const addNewSchedule = () => {
@@ -20,39 +20,39 @@ export default function App() {
 			...schedules,
 			{
 				id: schedules.length + 1, // ID based on length
-				day: "",
-				startTime: "",
-				endTime: "",
+				day: '',
+				startTime: '',
+				endTime: '',
 			},
-		]);
-	};
+		])
+	}
 
 	// Function to update a schedule field
 	const updateSchedule = (id, field, value) => {
 		setSchedules((prevSchedules) =>
 			prevSchedules.map((schedule) =>
-				schedule.id === id ? { ...schedule, [field]: value } : schedule
-			)
-		);
-	};
+				schedule.id === id ? { ...schedule, [field]: value } : schedule,
+			),
+		)
+	}
 
 	// Function to remove a single schedule
 	const removeSchedule = (id) => {
-		setSchedules(schedules.filter((schedule) => schedule.id !== id));
-	};
+		setSchedules(schedules.filter((schedule) => schedule.id !== id))
+	}
 
 	// Function to clear all schedules
 	const clearAllSchedules = () => {
-		setSchedules([]);
-	};
+		setSchedules([])
+	}
 
-	console.log(schedules);
+	console.log(schedules)
 	return (
 		<div>
 			{/* Add New Button */}
 			<button onClick={addNewSchedule}>Add New</button>
 
-			<button style={{ margin: "0 20px" }} onClick={clearAllSchedules}>
+			<button style={{ margin: '0 20px' }} onClick={clearAllSchedules}>
 				Clear All
 			</button>
 
@@ -70,8 +70,8 @@ export default function App() {
 							onChange={(e) =>
 								updateSchedule(
 									schedule.id,
-									"day",
-									e.target.value
+									'day',
+									e.target.value,
 								)
 							}
 						>
@@ -84,7 +84,7 @@ export default function App() {
 						</select>
 
 						{/* Start Time */}
-						<label style={{ margin: "0 10px 0 20px" }}>
+						<label style={{ margin: '0 10px 0 20px' }}>
 							Start Time
 						</label>
 						<input
@@ -93,14 +93,14 @@ export default function App() {
 							onChange={(e) =>
 								updateSchedule(
 									schedule.id,
-									"startTime",
-									e.target.value
+									'startTime',
+									e.target.value,
 								)
 							}
 						/>
 
 						{/* End Time */}
-						<label style={{ margin: "0 10px 0 20px" }}>
+						<label style={{ margin: '0 10px 0 20px' }}>
 							End Time
 						</label>
 						<input
@@ -109,15 +109,15 @@ export default function App() {
 							onChange={(e) =>
 								updateSchedule(
 									schedule.id,
-									"endTime",
-									e.target.value
+									'endTime',
+									e.target.value,
 								)
 							}
 						/>
 
 						{/* Remove Button (x) */}
 						<button
-							style={{ margin: "0 20px" }}
+							style={{ margin: '0 20px' }}
 							onClick={() => removeSchedule(schedule.id)}
 						>
 							x
@@ -126,5 +126,5 @@ export default function App() {
 				))}
 			</div>
 		</div>
-	);
+	)
 }
