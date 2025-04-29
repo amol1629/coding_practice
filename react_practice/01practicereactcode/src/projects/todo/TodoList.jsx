@@ -11,7 +11,6 @@ const TodoList = ({ todoList, deleteTodo }) => {
 								<p>
 									<span>{item}</span>
 								</p>
-
 								<button
 									className="delete-button"
 									onClick={() => deleteTodo(id)}

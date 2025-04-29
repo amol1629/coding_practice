@@ -28,7 +28,7 @@
 	"editor.overtypeCursorStyle": "line",
 	"editor.cursorBlinking": "expand",
 	"powermode.presets": "flames",
-	"powermode.enabled": true,
+	"powermode.enabled": false,
 	"powermode.combo.timerEnabled": "hide",
 	"powermode.shake.enabled": false,
 	"powermode.shake.intensity": 0,

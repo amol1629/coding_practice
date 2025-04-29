@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -439,7 +441,7 @@ select:focus {
 }
 
 /* Span Styling */
-span {
+.span {
 	display: inline-block;
 	padding: 0.5em 1.2em;
 	font-size: 0.95em;
@@ -455,7 +457,7 @@ span {
 	user-select: none;
 }
 
-span:hover {
+.span:hover {
 	background: rgba(255, 255, 255, 0.25);
 	color: #111;
 	transform: translateY(-2px);

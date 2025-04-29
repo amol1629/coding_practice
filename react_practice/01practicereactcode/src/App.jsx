@@ -1,5 +1,6 @@
 import './App.css'
-import Todo from './projects/todo/Todo'
+import UserContextProvider from './context/UserContextProvider'
+import UseContext from './hooks/usecontext/UseContext'
 
 function App() {
 	return (
@@ -12,7 +13,10 @@ function App() {
 				{/* <UseCallback /> */}
 				{/* <UseEffect /> */}
 
-				<Todo />
+				{/* <Todo /> */}
+				<UserContextProvider>
+					<UseContext />
+				</UserContextProvider>
 			</div>
 		</div>
 	)
