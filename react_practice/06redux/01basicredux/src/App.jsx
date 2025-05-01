@@ -1,12 +1,15 @@
-import "./App.css";
-import Home from "./components/Home";
+import './App.css'
+import ThemeProvider from './contexts/theme/ThemeProvider'
+import UseContext from './hooks/usecontext/UseContext'
 
 function App() {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+	return (
+		<div>
+			<ThemeProvider>
+				<UseContext />
+			</ThemeProvider>
+		</div>
+	)
 }
 
-export default App;
+export default App

@@ -1,13 +1,15 @@
 import React from 'react'
 import LoginForm from '../../components/LoginForm'
-import Profile from '../../components/Profile'
+import ThemeToggleButton from '../../components/ThemeToggleButton'
+import UserCard from '../../components/UserCard'
 
 const UseContext = () => {
 	return (
 		<div>
-			<LoginForm />
-
-			<Profile />
+			{/* <LoginForm /> */}
+			{/* <Profile /> */}
+			<ThemeToggleButton />
+			<UserCard />
 		</div>
 	)
 }
