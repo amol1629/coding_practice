@@ -1,13 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-/* Basic styles for light/dark mode transitions */
-html {
-  transition: background-color 0.3s ease;
-}
+
+
 
 body {
-  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  text-align: center;
+
 }
+
+/* Dark mode styles */
+/* .dark body {
+  @apply bg-gray-900 text-gray-100;
+} */
