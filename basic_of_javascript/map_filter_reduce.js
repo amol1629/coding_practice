@@ -13,6 +13,13 @@
  *  - The map() is "Higher Order Function" in JavaScript.
  *  -  The map() method handles passing of  arguments automatically, you do not need to manually pass parameters when calling the function within map().
  *
+ *  - What happens behind the seen when using filter() method:
+ *          1) The map() runs the function on every element.
+ *          2) It returns whatever the function returns.
+ *          3) The function can return anything (not just booleans).
+ *          4) The resulting array contains the return values of the function.
+ *          5) So, .map() creates a new array of the same length, with those boolean values.
+ *
  *  - Use Cases :
  *          1) Transforming Data : Converting data to a different format.
  *          2) Applying a Function to Each Element : Useful for modifying or formatting array elements.
@@ -44,6 +51,14 @@
  *
  *  - The filter()  is "Higher Order Function" in JavaScript.
  *  - The filter() method  works with a single function. You can filter separately or combine conditions within one callback.
+ *
+ *  - What happens behind the seen when using filter() method:
+ *          1) The filter() runs the function on every element.
+ *          2) The function must return a boolean value (true or false).
+ *          3) If the function returns true, the element is added to the new array.
+ *          4) If the function returns false, the element is not added to the new array.
+ *          5) The resulting array contains only the items that passed the test — i.e., the original numbers, not booleans.
+ *          6) The filter() method returns a new array containing all the elements that passed the test.
  *
  *  - Use Cases :
  *          1) Filtering Data : Removing unwanted elements from an array.
@@ -79,7 +94,7 @@
  *                                  => index (optional) : The index of the current element
  *                                  => array (optional) : The array reduce() was called upon.
  *                          => initialValue (optional) : Initial value of the accumulator.
- * 
+ *
  *  - In reduce() method, when an initial value isn't provided, reduce takes the first element of the array as the initial accumulator value and starts the iteration from the second element.
  *
  *  - Use Cases :
@@ -102,12 +117,12 @@
 
 // Question : Find the firstName of those people whose age is less than 30
 const users = [
-  { firstName: "John", lastName: "Doe", age: 23 },
-  { firstName: "Agastha", lastName: "Pandey", age: 28 },
-  { firstName: "Elia", lastName: "Watson", age: 40 },
-  { firstName: "Mathew", lastName: "Wade", age: 60 },
-  { firstName: "Harry", lastName: "Potter", age: 23 },
-];
+	{ firstName: 'John', lastName: 'Doe', age: 23 },
+	{ firstName: 'Agastha', lastName: 'Pandey', age: 28 },
+	{ firstName: 'Elia', lastName: 'Watson', age: 40 },
+	{ firstName: 'Mathew', lastName: 'Wade', age: 60 },
+	{ firstName: 'Harry', lastName: 'Potter', age: 23 },
+]
 
 // const result = users
 //   .filter((user) => user.age < 30)
@@ -117,9 +132,9 @@ const users = [
 
 // Using Reduce Method
 const resultUsingReduce = users.reduce((acc, curr) => {
-  if (curr.age < 30) {
-    acc.push(curr.firstName);
-  }
-  return acc;
-}, []);
-console.log("Users less than age 30 : ", resultUsingReduce);
+	if (curr.age < 30) {
+		acc.push(curr.firstName)
+	}
+	return acc
+}, [])
+console.log('Users less than age 30 : ', resultUsingReduce)
