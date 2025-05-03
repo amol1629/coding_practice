@@ -1,15 +1,16 @@
-  import './App.css'
-  import ThemeProvider from './contexts/theme/ThemeProvider'
-  import UseContext from './hooks/usecontext/UseContext'
+import './App.css'
+import Form from './components/Form'
+import ThemeProvider from './contexts/theme/ThemeProvider'
 
-  function App() {
-    return (
-      <div>
-        <ThemeProvider>
-          <UseContext />
-        </ThemeProvider>
-      </div>
-    )
-  }
+function App() {
+	return (
+		<div>
+			<ThemeProvider>
+				<Form />
+				{/* <UseContext /> */}
+			</ThemeProvider>
+		</div>
+	)
+}
 
-  export default App
+export default App
